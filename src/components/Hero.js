@@ -252,13 +252,12 @@ const HeroWrapper = styled.div`
   @media screen and (max-width: 480px) and (max-height: 780px) {
     .hero-img {
       img {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
       }
     }
 
     .hero-info {
-      margin-top: 1.5rem;
       h1 {
         font-size: 3.2rem;
       }
