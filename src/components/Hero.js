@@ -48,19 +48,20 @@ const Hero = () => {
 };
 
 const HeroWrapper = styled.div`
-  min-height: 100vh;
+  height: 100%;
   width: 100vw;
   background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${heroBackground}) center/cover no-repeat;
   background-attachment: fixed;
   display: grid;
   place-items: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 
   .hero-img {
     display: grid;
     place-items: center;
-    margin-bottom: -3rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     img {
       width: 220px;
       height: 220px;
@@ -111,6 +112,7 @@ const HeroWrapper = styled.div`
   }
 
   .hero-info {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     .firstName {
@@ -137,7 +139,6 @@ const HeroWrapper = styled.div`
 
     .hero-img {
       grid-column: 2;
-      margin: 0;
       padding-right: 5rem;
       img {
         width: 400px;
