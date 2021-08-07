@@ -130,12 +130,12 @@ const HeroWrapper = styled.div`
   @media screen and (min-width: 768px) {
     .hero-img {
       img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
       }
     }
     .hero-info {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       h1 {
         font-size: 4.5rem;
       }
@@ -258,6 +258,7 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
+      margin-top: 0;
       h1 {
         font-size: 3.2rem;
       }
@@ -273,6 +274,7 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
+      margin-top: 0;
       h1 {
         font-size: 3rem;
       }
