@@ -46,6 +46,7 @@ const FooterWrapper = styled.footer`
   }
 
   .links-container {
+    padding-top: 0.5rem;
     display: flex;
   }
 
@@ -53,7 +54,6 @@ const FooterWrapper = styled.footer`
     color: var(--color-background);
     padding: 0 0.5rem;
     font-size: 1rem;
-    text-transform: capitalize;
   }
   .footer-link:hover {
     color: var(--color-logo);

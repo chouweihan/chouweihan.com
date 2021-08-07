@@ -27,7 +27,7 @@ const Hero = () => {
           <Link to="/about" className="button">
             About Me
           </Link>
-          <SocialLinks />
+          <SocialLinks hero />
         </div>
       </div>
     </HeroWrapper>
@@ -105,7 +105,7 @@ const HeroWrapper = styled.div`
   }
 
   .hero-info {
-    margin-top: -2rem;
+    margin-top: -1rem;
     display: flex;
     flex-direction: column;
     .firstName {
