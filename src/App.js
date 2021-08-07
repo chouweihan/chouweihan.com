@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Sidebar, Footer } from "./components";
+import {
+  HomePage,
+  ErrorPage,
+  ContactPage,
+  ProjectsPage,
+  SingleProjectPage,
+  AboutPage,
+} from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      {/* <Sidebar /> */}
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/about">
+          <AboutPage />
+        </Route>
+        <Route exact path="/projects">
+          <ProjectsPage />
+        </Route>
+        <Route exact path="/projects/:id" children={<SingleProjectPage />} />
+        <Route exact path="/contact">
+          <ContactPage />
+        </Route>
+        <Route path="*">
+          <ErrorPage />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
+
+const DivWrapper = styled.div`
+  color: red;
+`;
 
 export default App;
