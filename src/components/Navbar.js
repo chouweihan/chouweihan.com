@@ -10,7 +10,7 @@ const Navbar = () => {
   const [navScroll, setNavScroll] = useState(false);
 
   const toggleNav = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 80) {
       setNavScroll(true);
     } else {
       setNavScroll(false);
@@ -57,10 +57,11 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s linear;
+  transition: all 0.12s linear;
   background: transparent;
 
   .sidebar-btn {
+    padding-right: 1rem;
     border: transparent;
     background: transparent;
     color: var(--color-logo);

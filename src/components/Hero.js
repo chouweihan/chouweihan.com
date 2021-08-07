@@ -48,7 +48,7 @@ const Hero = () => {
 };
 
 const HeroWrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${heroBackground}) center/cover no-repeat;
@@ -193,7 +193,8 @@ const HeroWrapper = styled.div`
     }
     .hero-info {
       .firstName {
-        padding-right: 10rem;
+        font-size: 6.5rem;
+        padding-right: 8rem;
       }
       .lastName {
         align-self: auto;
