@@ -39,11 +39,12 @@ const HeroWrapper = styled.div`
   place-items: center;
   padding-top: 4rem;
   padding-bottom: 2rem;
+  min-height: 100vh;
 
   .background-wrapper {
     min-height: 100vh;
-    top: 0;
     width: 100%;
+    top: 0;
     background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(${heroBackground}) center/cover no-repeat;
     position: fixed;
@@ -104,7 +105,7 @@ const HeroWrapper = styled.div`
   }
 
   .hero-info {
-    margin-top: 1rem;
+    margin-top: -2rem;
     display: flex;
     flex-direction: column;
     .firstName {
@@ -123,6 +124,21 @@ const HeroWrapper = styled.div`
     p {
       font-size: 1rem;
       color: var(--color-logo);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero-img {
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    .hero-info {
+      margin-top: 0.5rem;
+      h1 {
+        font-size: 4.5rem;
+      }
     }
   }
 
@@ -162,6 +178,7 @@ const HeroWrapper = styled.div`
       margin-left: 1.5rem;
     }
     .hero-info {
+      margin-top: 0;
       grid-column: 1;
       text-align: end;
       padding-left: 3rem;
@@ -229,6 +246,37 @@ const HeroWrapper = styled.div`
     }
     .hero-info {
       padding-left: 15rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) and (max-height: 780px) {
+    .hero-img {
+      img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    .hero-info {
+      margin-top: 1.5rem;
+      h1 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) and (max-height: 668px) {
+    .hero-img {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .hero-info {
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 `;
