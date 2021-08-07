@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import {
@@ -14,7 +13,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <Sidebar /> */}
+      <Sidebar />
       <Switch>
         <Route exact path="/">
           <HomePage />
@@ -37,9 +36,5 @@ function App() {
     </Router>
   );
 }
-
-const DivWrapper = styled.div`
-  color: red;
-`;
 
 export default App;

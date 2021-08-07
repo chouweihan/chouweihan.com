@@ -4,10 +4,12 @@ import logo_light from "../assets/logo-light.png";
 import logo_dark from "../assets/logo-dark.svg";
 import { Link } from "react-router-dom";
 import { links } from "../data/linksData";
-import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
+import { BsList } from "react-icons/bs";
+import { useGeneralContext } from "../context-reducers/general-context";
 
 const Navbar = () => {
   const [navScroll, setNavScroll] = useState(false);
+  const { openSidebar } = useGeneralContext();
 
   const toggleNav = () => {
     if (window.scrollY > 80) {
@@ -29,8 +31,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <button class="sidebar-btn">
-            <BsReverseLayoutSidebarInsetReverse />
+          <button className="sidebar-btn" onClick={openSidebar}>
+            <BsList />
           </button>
 
           <ul className="nav-links">
@@ -61,17 +63,16 @@ const Nav = styled.nav`
   background: transparent;
 
   .sidebar-btn {
+    padding-top: 0.5rem;
     padding-right: 1rem;
     border: transparent;
     background: transparent;
     color: var(--color-logo);
     transition: var(--transition);
-
-    font-size: 1.7rem;
+    font-size: 2.1rem;
   }
 
   .sidebar-btn:hover {
-    transform: rotate(90deg);
     color: var(--color-gold);
   }
 
@@ -134,15 +135,15 @@ const Nav = styled.nav`
   }
 
   @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 992px) {
     .sidebar-btn {
       display: none;
     }
     .nav-links {
       display: flex;
     }
+  }
+
+  @media screen and (min-width: 992px) {
     .nav-header {
       img {
         width: 13rem;

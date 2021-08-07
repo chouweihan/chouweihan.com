@@ -1,9 +1,9 @@
-import React, { useEffect, useContext, useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import reducer from "./general-reducer";
 import { OPEN_SIDEBAR, CLOSE_SIDEBAR } from "../actions";
 
 const initialState = {
-  sidebar_state: false,
+  sidebar: false,
 };
 
 const GeneralContext = React.createContext();

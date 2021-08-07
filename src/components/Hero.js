@@ -4,12 +4,14 @@ import heroBackground from "../assets/hero.jpg";
 import heroImg from "../assets/me.jpg";
 import { socialLinks } from "../data/linksData";
 import { Link } from "react-router-dom";
+import { SocialLinks } from "../components";
 
 const Hero = () => {
   return (
     <HeroWrapper>
+      <div className="background-wrapper"></div>
       <div className="hero-img">
-        <img src={heroImg} alt="selfie image" />
+        <img src={heroImg} alt="selfie" />
       </div>
       <div className="padding">
         <div className="hero-info">
@@ -25,22 +27,7 @@ const Hero = () => {
           <Link to="/about" className="button">
             About Me
           </Link>
-          <ul className="social-links">
-            {socialLinks.map((link) => {
-              return (
-                <li key={link.id}>
-                  <a
-                    href={link.url}
-                    className="icon-link fa-fw"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {link.icon}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <SocialLinks />
         </div>
       </div>
     </HeroWrapper>
@@ -48,15 +35,20 @@ const Hero = () => {
 };
 
 const HeroWrapper = styled.div`
-  min-height: 100vh;
-  min-width: 100vw;
-  background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${heroBackground}) center/cover no-repeat;
-  background-attachment: fixed;
   display: grid;
   place-items: center;
   padding-top: 4rem;
   padding-bottom: 2rem;
+
+  .background-wrapper {
+    min-height: 100vh;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(${heroBackground}) center/cover no-repeat;
+    position: fixed;
+    z-index: -1;
+  }
 
   .hero-img {
     display: grid;
@@ -72,11 +64,11 @@ const HeroWrapper = styled.div`
   }
 
   .button {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding: 0.2rem 0.7rem;
     color: var(--color-logo);
     border: 1px solid var(--color-logo);
     width: fit-content;
-    padding: 0.2rem 0.75rem;
     border-radius: 5px;
     margin-bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
@@ -103,7 +95,7 @@ const HeroWrapper = styled.div`
 
   .icon-link {
     color: var(--color-gold);
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     transition: var(--transition);
   }
 
@@ -129,6 +121,7 @@ const HeroWrapper = styled.div`
       color: var(--color-light);
     }
     p {
+      font-size: 1rem;
       color: var(--color-logo);
     }
   }
@@ -137,6 +130,11 @@ const HeroWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
 
+    .button {
+      font-size: 1.5rem;
+      padding: 0.2rem 0.75rem;
+    }
+
     .hero-img {
       grid-column: 2;
       padding-right: 5rem;
@@ -144,7 +142,7 @@ const HeroWrapper = styled.div`
         width: 400px;
         height: 450px;
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 15px;
         border: 3px solid var(--color-gold);
       }
     }
@@ -155,6 +153,9 @@ const HeroWrapper = styled.div`
 
     .social-links {
       justify-content: end;
+    }
+    .icon-link {
+      font-size: 2.3rem;
     }
     li {
       margin-right: 0;
@@ -180,13 +181,21 @@ const HeroWrapper = styled.div`
       p {
         max-width: 30vw;
         align-self: end;
+        font-size: 1.1rem;
       }
     }
   }
 
   @media screen and (min-width: 1320px) {
+    .icon-link {
+      font-size: 2.5rem;
+    }
     .hero-img {
       padding-right: 10rem;
+      img {
+        width: 450px;
+        height: 500px;
+      }
     }
     .padding {
       padding: 0 0 0 3rem;
@@ -205,7 +214,21 @@ const HeroWrapper = styled.div`
       h2 {
       }
       p {
+        font-size: 1.2rem;
       }
+    }
+  }
+
+  @media screen and (min-width: 1700px) {
+    .hero-img {
+      padding-right: 15rem;
+      img {
+        width: 500px;
+        height: 500px;
+      }
+    }
+    .hero-info {
+      padding-left: 15rem;
     }
   }
 `;

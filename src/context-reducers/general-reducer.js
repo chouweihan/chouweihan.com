@@ -4,17 +4,16 @@ const general_reducer = (state, action) => {
   switch (action.type) {
     case OPEN_SIDEBAR:
       console.log("open");
+      console.log(state.sidebar);
       return {
         ...state,
-
-        sidebar_state: true,
+        sidebar: true,
       };
 
     case CLOSE_SIDEBAR:
-      console.log("close");
       return {
         ...state,
-        sidebar_state: false,
+        sidebar: false,
       };
 
     default:
