@@ -48,8 +48,8 @@ const Hero = () => {
 };
 
 const HeroWrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${heroBackground}) center/cover no-repeat;
   background-attachment: fixed;
