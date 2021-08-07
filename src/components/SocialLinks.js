@@ -29,7 +29,7 @@ const SLWrapper = styled.ul`
     align-items: center;
   }
 
-  /* li::nth-child(2) {
+  li::nth-child(2) {
     margin-top: 0.02rem;
   }
 
@@ -46,7 +46,7 @@ const SLWrapper = styled.ul`
 
   li .border:hover {
     border-color: var(--color-logo);
-  } */
+  }
 `;
 
 export default SocialLinks;
