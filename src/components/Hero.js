@@ -258,7 +258,6 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
-      margin-top: -0.5rem;
       h1 {
         font-size: 3.2rem;
       }
@@ -274,7 +273,6 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
-      margin-top: -0.5rem;
       h1 {
         font-size: 3rem;
       }
