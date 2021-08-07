@@ -33,6 +33,7 @@ const Hero = () => {
                     href={link.url}
                     className="icon-link fa-fw"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     {link.icon}
                   </a>
