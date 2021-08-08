@@ -64,7 +64,7 @@ const Nav = styled.nav`
   background: transparent;
 
   .sidebar-btn {
-    padding-right: 1rem;
+    padding-right: 0.8rem;
     display: flex;
     align-self: center;
     border: transparent;
