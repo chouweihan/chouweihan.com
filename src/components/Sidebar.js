@@ -84,13 +84,14 @@ const SidebarWrapper = styled.aside`
     background-color: var(--color-gold);
     height: 1px;
     opacity: 0.8;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     width: 50%;
   }
 
   h3 {
+    font-weight: 300;
     text-transform: capitalize;
-    color: var(--color-logo);
+    color: var(--color-background);
     padding: 0;
     opacity: 0.9;
     margin: 0;
@@ -101,12 +102,12 @@ const SidebarWrapper = styled.aside`
   }
 
   ul {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 1.5rem;
   }
 
   .links-container span {
-    color: var(--color-logo);
+    color: var(--color-background);
     font-size: 1.5rem;
     display: flex;
     align-self: center;
@@ -119,6 +120,15 @@ const SidebarWrapper = styled.aside`
     transition: var(--transition);
   }
 
+  .link-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding-left: 2rem;
+    text-transform: capitalize;
+    color: var(--color-background);
+  }
+
   .link:hover {
     padding-left: 3rem;
     background-color: var(--color-logo-dark-light);
@@ -128,13 +138,6 @@ const SidebarWrapper = styled.aside`
     span {
       color: var(--color-gold);
     }
-  }
-
-  .link-text {
-    font-size: 1.5rem;
-    padding-left: 2rem;
-    text-transform: capitalize;
-    color: var(--color-logo);
   }
 
   .sidebar {
