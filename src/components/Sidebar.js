@@ -154,6 +154,7 @@ const SidebarWrapper = styled.aside`
 
   .sidebar {
     transform: translateX(-100%);
+    border-right: 1px solid var(--color-gold-half);
     position: fixed;
     min-height: 100%;
     min-width: 65vw;
