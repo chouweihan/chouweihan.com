@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import { links } from "../data/linksData";
 import { BsList } from "react-icons/bs";
 import { useGeneralContext } from "../context-reducers/general-context";
+import { IoCloseOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [navScroll, setNavScroll] = useState(false);
-  const { openSidebar } = useGeneralContext();
+  const { openSidebar, sidebar } = useGeneralContext();
 
   const toggleNav = () => {
     if (window.scrollY > 80) {
@@ -32,7 +33,7 @@ const Navbar = () => {
           </div>
 
           <button className="sidebar-btn" onClick={openSidebar}>
-            <BsList />
+            {sidebar ? <IoCloseOutline /> : <BsList />}
           </button>
 
           <ul className="nav-links">
@@ -63,8 +64,9 @@ const Nav = styled.nav`
   background: transparent;
 
   .sidebar-btn {
-    padding-top: 0.5rem;
     padding-right: 1rem;
+    display: flex;
+    align-self: center;
     border: transparent;
     background: transparent;
     color: var(--color-logo);

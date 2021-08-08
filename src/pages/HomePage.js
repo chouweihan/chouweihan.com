@@ -1,9 +1,7 @@
 import React from "react";
-import { useGeneralContext } from "../context-reducers/general-context";
 import { Hero, Experience } from "../components";
-const HomePage = () => {
-  const { openSidebar, closeSidebar } = useGeneralContext();
 
+const HomePage = () => {
   return (
     <main>
       <Hero></Hero>

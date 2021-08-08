@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { socialLinks, links } from "../data/linksData";
+import { links } from "../data/linksData";
 import { Link } from "react-router-dom";
 import { SocialLinks } from "../components";
 
@@ -52,6 +52,7 @@ const FooterWrapper = styled.footer`
 
   .footer-link {
     color: var(--color-background);
+    text-transform: capitalize;
     padding: 0 0.5rem;
     font-size: 1rem;
   }

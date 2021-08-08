@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import heroBackground from "../assets/hero.jpg";
 import heroImg from "../assets/me.jpg";
-import { socialLinks } from "../data/linksData";
 import { Link } from "react-router-dom";
 import { SocialLinks } from "../components";
 
@@ -155,8 +154,8 @@ const HeroWrapper = styled.div`
       grid-column: 2;
       padding-right: 5rem;
       img {
-        width: 400px;
-        height: 450px;
+        width: 300px;
+        height: 350px;
         object-fit: cover;
         border-radius: 15px;
         border: 3px solid var(--color-gold);
@@ -210,8 +209,8 @@ const HeroWrapper = styled.div`
     .hero-img {
       padding-right: 10rem;
       img {
-        width: 450px;
-        height: 500px;
+        width: 400px;
+        height: 450px;
       }
     }
     .padding {
@@ -219,7 +218,7 @@ const HeroWrapper = styled.div`
     }
     .hero-info {
       .firstName {
-        font-size: 6.5rem;
+        font-size: 5.5rem;
         padding-right: 8rem;
       }
       .lastName {
@@ -246,6 +245,9 @@ const HeroWrapper = styled.div`
     }
     .hero-info {
       padding-left: 15rem;
+      .firstName {
+        font-size: 6.5rem;
+      }
     }
   }
 
@@ -264,6 +266,22 @@ const HeroWrapper = styled.div`
     }
   }
 
+  @media screen and (max-width: 768px) and (max-height: 668px) {
+    .hero-img {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .hero-info {
+      margin-top: 2rem;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
   @media screen and (max-width: 480px) and (max-height: 668px) {
     .hero-img {
       img {
@@ -273,6 +291,7 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
+      margin-top: 1rem;
       h1 {
         font-size: 3rem;
       }

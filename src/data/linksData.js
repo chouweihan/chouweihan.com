@@ -1,25 +1,30 @@
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-
+import { AiFillGithub, AiFillLinkedin, AiFillHome } from "react-icons/ai";
+import { BsFillPersonFill } from "react-icons/bs";
+import { IoMailSharp, IoFolderSharp } from "react-icons/io5";
 export const links = [
   {
     id: 1,
     text: "home",
     url: "/",
+    icon: <AiFillHome />,
   },
   {
     id: 2,
     text: "about",
     url: "/about",
+    icon: <BsFillPersonFill />,
   },
   {
     id: 3,
     text: "projects",
     url: "/projects",
+    icon: <IoFolderSharp />,
   },
   {
     id: 4,
     text: "contact",
     url: "contact",
+    icon: <IoMailSharp />,
   },
 ];
 

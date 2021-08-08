@@ -23,10 +23,13 @@
   --color-light: #ccdffc;
   --color-lighter: rgb(226, 237, 253);
   --color-darker: #77aaf7;
+  --color-logo-dark-light: #25426d;
   --color-logo-dark: #1d3354;
   --color-logo-dark-2: #0f1a29;
+  --color-logo-dark-3: #091322;
   --color-background: #fdfdfd;
   --color-gold: rgb(230, 215, 132);
+  --color-gold-dark: rgb(124, 116, 70);
 
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
