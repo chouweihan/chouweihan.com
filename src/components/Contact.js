@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Title } from "./";
 
-const Experience = () => {
+const Contact = () => {
   return (
     <Wrapper className="section">
-      <Title>Experience</Title>
+      <Title>Contact</Title>
     </Wrapper>
   );
 };
@@ -14,4 +14,4 @@ const Wrapper = styled.section`
   background-color: var(--color-background);
 `;
 
-export default Experience;
+export default Contact;

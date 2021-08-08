@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Title } from "./";
 
-const Experience = () => {
+const Projects = () => {
   return (
     <Wrapper className="section">
-      <Title>Experience</Title>
+      <Title color>Projects</Title>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  background-color: var(--color-background);
+  background-color: var(--color-logo-dark-2);
 `;
 
-export default Experience;
+export default Projects;

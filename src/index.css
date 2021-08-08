@@ -24,6 +24,7 @@
   --color-lighter: rgb(226, 237, 253);
   --color-darker: #77aaf7;
   --color-logo-dark-light: #25426d;
+  --color-logo-dark-light-2: #1b3152;
   --color-logo-dark: #1d3354;
   --color-logo-dark-2: #0f1a29;
   --color-logo-dark-3: #091322;
@@ -148,7 +149,9 @@ p {
 
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 0;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 .section-center {
   width: 93vw;
