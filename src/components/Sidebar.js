@@ -93,7 +93,6 @@ const SidebarWrapper = styled.aside`
     text-transform: capitalize;
     color: var(--color-background);
     padding: 0;
-    opacity: 0.9;
     margin: 0;
   }
   p {
@@ -109,6 +108,7 @@ const SidebarWrapper = styled.aside`
   .links-container span {
     color: var(--color-background);
     font-size: 1.5rem;
+    opacity: 0.9;
     display: flex;
     align-self: center;
   }
@@ -122,6 +122,7 @@ const SidebarWrapper = styled.aside`
 
   .link-text {
     font-size: 1.5rem;
+    opacity: 0.9;
     letter-spacing: 1px;
     font-weight: 300;
     padding-left: 2rem;
