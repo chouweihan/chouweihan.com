@@ -24,7 +24,7 @@ const Sidebar = () => {
               return (
                 <Link to={link.url} id={link.id} onClick={closeSidebar}>
                   <li className="link">
-                    <span>{link.icon}</span>
+                    <span className="fa-fw">{link.icon}</span>
                     <p className="link-text">{link.text}</p>
                   </li>
                 </Link>
@@ -40,8 +40,10 @@ const Sidebar = () => {
               return (
                 <Link to={link.url} id={link.id} onClick={closeSidebar}>
                   <li className="link">
-                    <span>{link.icon}</span>
-                    <p className="link-text">{link.name}</p>
+                    <p className="link-text">
+                      <span className="fa-fw">{link.icon}</span>
+                      {link.name}
+                    </p>
                   </li>
                 </Link>
               );
@@ -89,6 +91,7 @@ const SidebarWrapper = styled.aside`
   }
 
   h3 {
+    opacity: 0.9;
     font-weight: 300;
     text-transform: capitalize;
     color: var(--color-background);
@@ -110,6 +113,7 @@ const SidebarWrapper = styled.aside`
     font-size: 1.5rem;
     opacity: 0.9;
     display: flex;
+    padding-right: 2.1rem;
     align-self: center;
   }
 
@@ -121,11 +125,12 @@ const SidebarWrapper = styled.aside`
   }
 
   .link-text {
+    display: flex;
     font-size: 1.5rem;
     opacity: 0.9;
     letter-spacing: 1px;
     font-weight: 300;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
     text-transform: capitalize;
     color: var(--color-background);
   }
