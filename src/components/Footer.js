@@ -28,12 +28,13 @@ const Footer = () => {
 
 const FooterWrapper = styled.footer`
   color: var(--color-light);
-  height: 6rem;
+  height: 7.5rem;
   width: 100vw;
   background-color: var(--color-logo-dark-2);
   display: grid;
   place-items: center;
   row-gap: 0;
+  padding: 0.75rem 0;
 
   span {
     color: var(--color-gold);

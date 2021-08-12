@@ -5,7 +5,7 @@ import { Title } from "./";
 const Projects = () => {
   return (
     <Wrapper className="section">
-      <Title color>Projects</Title>
+      <Title color="true">Projects</Title>
     </Wrapper>
   );
 };

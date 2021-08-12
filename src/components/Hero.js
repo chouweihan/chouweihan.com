@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="hero-img">
         <img src={heroImg} alt="selfie" />
       </div>
-      <div className="padding">
+      <div className="hero-center">
         <div className="hero-info">
           <h1 className="firstName">Wei-Han</h1>
           <h1 className="lastName">Chou</h1>
@@ -39,6 +39,10 @@ const HeroWrapper = styled.div`
   padding-top: 4rem;
   padding-bottom: 2rem;
   min-height: 100vh;
+
+  .hero-center {
+    max-width: var(--max-width);
+  }
 
   .background-wrapper {
     min-height: 100vh;
@@ -89,10 +93,6 @@ const HeroWrapper = styled.div`
     margin-right: 1rem;
   }
 
-  p {
-    max-width: 80vw;
-  }
-
   .icon-link {
     color: var(--color-gold);
     font-size: 2.1rem;
@@ -104,7 +104,7 @@ const HeroWrapper = styled.div`
   }
 
   .hero-info {
-    margin-top: -1rem;
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
     .firstName {
@@ -121,6 +121,7 @@ const HeroWrapper = styled.div`
       color: var(--color-light);
     }
     p {
+      max-width: 80vw;
       font-size: 1rem;
       color: var(--color-logo);
     }
@@ -137,6 +138,9 @@ const HeroWrapper = styled.div`
       margin-top: 1rem;
       h1 {
         font-size: 4.5rem;
+      }
+      p {
+        padding-right: 5rem;
       }
     }
   }
@@ -182,7 +186,8 @@ const HeroWrapper = styled.div`
       text-align: end;
       padding-left: 3rem;
       .firstName {
-        padding-right: 5rem;
+        /* padding-right: 5rem; */
+        text-align: left;
         margin-bottom: 0;
       }
       .lastName {
@@ -195,8 +200,9 @@ const HeroWrapper = styled.div`
       h2 {
       }
       p {
-        max-width: 30vw;
+        max-width: 35vw;
         align-self: end;
+        padding: 0;
         font-size: 1.1rem;
       }
     }
@@ -213,13 +219,10 @@ const HeroWrapper = styled.div`
         height: 450px;
       }
     }
-    .padding {
-      padding: 0 0 0 3rem;
-    }
     .hero-info {
       .firstName {
         font-size: 5.5rem;
-        padding-right: 8rem;
+        /* padding-right: 8rem; */
       }
       .lastName {
         align-self: auto;
@@ -230,6 +233,7 @@ const HeroWrapper = styled.div`
       h2 {
       }
       p {
+        max-width: 30vw;
         font-size: 1.2rem;
       }
     }
@@ -237,6 +241,7 @@ const HeroWrapper = styled.div`
 
   @media screen and (min-width: 1700px) {
     .hero-img {
+      margin-top: 1.5rem;
       padding-right: 15rem;
       img {
         width: 500px;

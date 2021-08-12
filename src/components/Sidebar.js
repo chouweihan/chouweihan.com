@@ -22,7 +22,7 @@ const Sidebar = () => {
           <ul>
             {links.map((link) => {
               return (
-                <Link to={link.url} id={link.id} onClick={closeSidebar}>
+                <Link to={link.url} key={link.id} onClick={closeSidebar}>
                   <li className="link">
                     <span className="fa-fw">{link.icon}</span>
                     <p className="link-text">{link.text}</p>
@@ -41,8 +41,7 @@ const Sidebar = () => {
                 <a
                   href={link.url}
                   target="_blank"
-                  id={link.id}
-                  onClick={closeSidebar}
+                  key={link.id}
                   rel="noreferrer"
                 >
                   <li className="link">

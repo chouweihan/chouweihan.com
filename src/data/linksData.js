@@ -23,7 +23,7 @@ export const links = [
   {
     id: 4,
     text: "contact",
-    url: "contact",
+    url: "/contact",
     icon: <IoMailSharp />,
   },
 ];

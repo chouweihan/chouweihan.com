@@ -7,6 +7,7 @@ import Projects from "./Projects";
 import Sidebar from "./Sidebar";
 import SocialLinks from "./SocialLinks";
 import Title from "./Title";
+import DraftJS from "./RichText/DraftJS";
 
 export {
   Footer,
@@ -18,4 +19,5 @@ export {
   Title,
   Contact,
   Projects,
+  DraftJS,
 };

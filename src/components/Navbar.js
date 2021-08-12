@@ -52,6 +52,7 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -148,7 +149,7 @@ const Nav = styled.nav`
   @media screen and (min-width: 992px) {
     .nav-header {
       img {
-        width: 13rem;
+        width: 12rem;
       }
     }
 
@@ -162,7 +163,7 @@ const Nav = styled.nav`
   @media screen and (min-width: 1400px) {
     .nav-header {
       img {
-        width: 15rem;
+        width: 14.3rem;
       }
     }
     .nav-links {

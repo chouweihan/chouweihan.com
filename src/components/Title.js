@@ -24,14 +24,35 @@ const TitleWrapper = styled.div`
   h1 {
     margin: 0;
     margin-bottom: 0.6rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 500;
     text-transform: capitalize;
   }
 
   .underline {
-    width: 15vw;
+    width: 25vw;
     height: 2px;
     background-color: var(--color-gold);
+  }
+
+  @media screen and (min-width: 768px) {
+    .underline {
+      width: 20;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .underline {
+      width: 13vw;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
   }
 `;
 
