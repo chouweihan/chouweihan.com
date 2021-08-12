@@ -9,7 +9,7 @@ export const expData = [
     name: "BCIT",
     title: "Computer Systems Technology (CST)",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, vel? Accusamus nesciunt mollitia cumque quod odio earum quisquam at consequuntur!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, vel? Accusamus nesciunt mollitia cumque quod odio earum quisquam at consequuntur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, vel? Accusamus nesciunt mollitia cumque quod odio earum quisquam at consequuntur!",
     images: [bcit1, bcit2],
     type: "Education",
     year: "2018-2020",

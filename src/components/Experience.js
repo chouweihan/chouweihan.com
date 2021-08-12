@@ -19,15 +19,19 @@ const Experience = () => {
 
 const Wrapper = styled.section`
   background-color: var(--color-background);
-
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 
   .center {
     padding-top: 3rem;
     display: grid;
     place-items: center;
-    grid-template-rows: 1fr 1fr;
     gap: 3rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    /* .center {
+      grid-template-columns: 1fr 1fr;
+    } */
   }
 `;
 
