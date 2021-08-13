@@ -9,19 +9,20 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <div className="background-wrapper"></div>
-      <div className="hero-img">
-        <img src={heroImg} alt="selfie" />
-      </div>
       <div className="hero-center">
+        <div className="hero-img">
+          <img src={heroImg} alt="selfie" />
+        </div>
         <div className="hero-info">
-          <h1 className="firstName">Wei-Han</h1>
-          <h1 className="lastName">Chou</h1>
+          <div className="name">
+            <h1 className="firstName">Wei-Han</h1>
+            <h1 className="lastName">Chou</h1>
+          </div>
 
           <h2>Aspiring Developer</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-            nostrum ut unde tempore aspernatur et facere, laborum numquam eaque.
-            Suscipit.
+            Hi, Welcome to my site! Here you will find information about me and
+            my projects!
           </p>
           <Link to="/about" className="button">
             About Me
@@ -41,7 +42,10 @@ const HeroWrapper = styled.div`
   min-height: 100vh;
 
   .hero-center {
-    max-width: var(--max-width);
+    display: grid;
+    place-items: center;
+    max-width: 80vw;
+    gap: 2rem;
   }
 
   .background-wrapper {
@@ -140,14 +144,19 @@ const HeroWrapper = styled.div`
         font-size: 4.5rem;
       }
       p {
+        max-width: 90%;
         padding-right: 5rem;
       }
     }
   }
 
   @media screen and (min-width: 992px) {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: dense;
+    .hero-center {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: dense;
+      min-width: 80vw;
+      gap: 4rem;
+    }
 
     .button {
       font-size: 1.5rem;
@@ -156,10 +165,10 @@ const HeroWrapper = styled.div`
 
     .hero-img {
       grid-column: 2;
-      padding-right: 5rem;
+      margin: 0;
       img {
-        width: 300px;
-        height: 350px;
+        width: 400px;
+        height: 450px;
         object-fit: cover;
         border-radius: 15px;
         border: 3px solid var(--color-gold);
@@ -171,7 +180,7 @@ const HeroWrapper = styled.div`
     }
 
     .social-links {
-      justify-content: end;
+      justify-content: flex-end;
     }
     .icon-link {
       font-size: 2.3rem;
@@ -184,9 +193,8 @@ const HeroWrapper = styled.div`
       margin-top: 0;
       grid-column: 1;
       text-align: end;
-      padding-left: 3rem;
       .firstName {
-        /* padding-right: 5rem; */
+        width: 100%;
         text-align: left;
         margin-bottom: 0;
       }
@@ -195,9 +203,13 @@ const HeroWrapper = styled.div`
         margin-bottom: 0.3rem;
       }
       h1 {
+        white-space: nowrap;
+
         font-size: 5rem;
       }
       h2 {
+        white-space: nowrap;
+        font-size: 2.3rem;
       }
       p {
         max-width: 35vw;
@@ -213,44 +225,49 @@ const HeroWrapper = styled.div`
       font-size: 2.5rem;
     }
     .hero-img {
-      padding-right: 10rem;
       img {
-        width: 400px;
-        height: 450px;
+        min-height: 75%;
+        object-fit: cover;
       }
     }
     .hero-info {
       .firstName {
         font-size: 5.5rem;
-        /* padding-right: 8rem; */
+        padding-left: 10rem;
       }
       .lastName {
         align-self: auto;
-      }
-      h1 {
-        font-size: 6rem;
+        font-size: 5.5rem;
       }
       h2 {
+        font-size: 2.6rem;
       }
       p {
-        max-width: 30vw;
+        max-width: 60%;
         font-size: 1.2rem;
       }
     }
   }
 
   @media screen and (min-width: 1700px) {
+    .hero-center {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
     .hero-img {
       margin-top: 1.5rem;
-      padding-right: 15rem;
+      /* padding-right: 15rem; */
       img {
         width: 500px;
         height: 500px;
       }
     }
+
     .hero-info {
-      padding-left: 15rem;
       .firstName {
+        font-size: 6.5rem;
+      }
+      .lastName {
         font-size: 6.5rem;
       }
     }
@@ -280,7 +297,6 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
-      margin-top: 2rem;
       h1 {
         font-size: 3rem;
       }
@@ -296,7 +312,6 @@ const HeroWrapper = styled.div`
     }
 
     .hero-info {
-      margin-top: 1rem;
       h1 {
         font-size: 3rem;
       }

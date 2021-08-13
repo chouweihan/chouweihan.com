@@ -52,7 +52,7 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -138,6 +138,9 @@ const Nav = styled.nav`
   }
 
   @media screen and (min-width: 768px) {
+    .nav-center {
+      width: 80vw;
+    }
     .sidebar-btn {
       display: none;
     }
@@ -167,7 +170,6 @@ const Nav = styled.nav`
       }
     }
     .nav-links {
-      padding-right: 4rem;
       a {
         font-size: 1.5rem;
       }

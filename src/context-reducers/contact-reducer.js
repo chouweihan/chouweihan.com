@@ -1,4 +1,4 @@
-import { SET_HTML, SEND_EMAIL, EMAIL_RESPONSE, EMAIL_ERROR } from "../actions";
+import { SET_HTML, SEND_EMAIL, EMAIL_RESPONSE } from "../actions";
 
 const contact_reducer = (state, action) => {
   switch (action.type) {
@@ -8,20 +8,19 @@ const contact_reducer = (state, action) => {
       return { ...state, emailLoading: true };
 
     case EMAIL_RESPONSE:
-      return {
-        ...state,
-        emailLoading: false,
-        success: true,
-        response: action.payload,
-      };
-
-    case EMAIL_ERROR:
-      return {
-        ...state,
-        emailLoading: false,
-        success: false,
-        error: action.payload,
-      };
+      const { success, res } = action.payload;
+      if (success) {
+        return {
+          ...state,
+          emailLoading: false,
+          response: res,
+        };
+      } else {
+        return {
+          ...state,
+          emailLoading: false,
+        };
+      }
 
     default:
       throw new Error(`No Matching "${action.type}" - action type`);

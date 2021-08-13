@@ -3,8 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const ExpCard = ({ data }) => {
-  const { name, title, description, images, year } = data;
-  console.log(name, title, description, images);
+  const { name, title, description, images, year, type } = data;
+
   return (
     <CardWrapper>
       <div className="img-wrapper">
@@ -17,6 +17,7 @@ const ExpCard = ({ data }) => {
           <h2>{year}</h2>
         </div>
         <h2>{title}</h2>
+        <h4>{type}</h4>
         <p>{description}</p>
       </div>
     </CardWrapper>
@@ -57,8 +58,12 @@ const CardWrapper = styled.div`
     color: var(--color-p-3);
   }
 
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .card-info {
@@ -91,16 +96,16 @@ const CardWrapper = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1300px) {
     grid-template-columns: auto 1fr;
-    max-width: 75vw;
+    max-width: 80vw;
 
     .main-img {
       border-top-right-radius: 0;
       border-bottom-left-radius: 15px;
       border-bottom: 0;
-      min-height: 270px;
-      width: 420px;
+      min-height: 100%;
+      min-width: 420px;
       border-right: 5px solid var(--color-gold);
     }
 
@@ -124,20 +129,20 @@ const CardWrapper = styled.div`
 
     .info-header {
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 `;

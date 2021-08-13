@@ -1,15 +1,12 @@
 import React, { useContext, useReducer } from "react";
-import axios from "axios";
-import { SET_HTML, SEND_EMAIL, EMAIL_RESPONSE, EMAIL_ERROR } from "../actions";
+import { SET_HTML, SEND_EMAIL, EMAIL_RESPONSE } from "../actions";
 import reducer from "./contact-reducer";
 
 const initialState = {
   html: "",
   title: "",
   email: "",
-  success: true,
   response: {},
-  error: {},
   emailLoading: false,
 };
 
@@ -22,22 +19,12 @@ export const ContactProvider = ({ children }) => {
     dispatch({ type: SET_HTML, payload: html });
   };
 
-  const sendEmail = async (title, email) => {
+  const sendEmail = () => {
     dispatch({ type: SEND_EMAIL });
-    const emailBody = {
-      title: title,
-      email: email,
-      body: state.html,
-    };
+  };
 
-    await axios
-      .post(process.env.REACT_APP_MAIL_URL, emailBody)
-      .then((res) => {
-        dispatch({ type: EMAIL_RESPONSE, payload: res.response });
-      })
-      .catch((err) => {
-        dispatch({ type: EMAIL_ERROR, payload: err.response });
-      });
+  const emailResponse = (success = false, res = null) => {
+    dispatch({ type: EMAIL_RESPONSE, payload: { success, res } });
   };
 
   return (
@@ -46,6 +33,7 @@ export const ContactProvider = ({ children }) => {
         ...state,
         setHTML,
         sendEmail,
+        emailResponse,
       }}
     >
       {children}

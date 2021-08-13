@@ -157,7 +157,7 @@ const SidebarWrapper = styled.aside`
     position: fixed;
     min-height: 100%;
     min-width: 65vw;
-    z-index: 100;
+    z-index: 105;
     overflow-x: hidden;
     transition: var(--transition);
     background-color: var(--color-logo-dark-2);
@@ -168,6 +168,7 @@ const SidebarWrapper = styled.aside`
     display: none;
     position: fixed;
     min-height: 100%;
+    z-index: 104;
     min-width: 100vw;
     background-color: var(--color-logo-dark-3);
     opacity: 0.6;

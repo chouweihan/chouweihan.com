@@ -1,29 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { Title, DraftJS } from "./";
 import { useContactContext } from "../context-reducers/contact-context";
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
 const Contact = () => {
-  const { sendEmail, emailLoading, response, error, success } =
-    useContactContext();
+  const { sendEmail, emailLoading, emailResponse, html } = useContactContext();
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [confirm, setConfirm] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setConfirm(true);
   };
 
-  const handleConfirm = (e) => {
+  const handleConfirm = async (e) => {
     e.preventDefault();
-    sendEmail(title, email);
-    console.log(response, error);
-    if (response && response.status === 200) {
-      setTitle("");
-      setEmail("");
-    }
     setConfirm(false);
+    sendEmail();
+    const emailBody = {
+      title: title,
+      email: email,
+      body: html,
+    };
+
+    axios
+      .post(process.env.REACT_APP_MAIL_URL, emailBody)
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          setTitle("");
+          setEmail("");
+          emailResponse(true, res);
+        } else {
+          setError("Something went wrong, sorry :3");
+          emailResponse();
+        }
+      })
+      .catch((err) => {
+        const { response } = err;
+        if (response.status === 400) {
+          setError(response.data.err);
+        } else {
+          setError("Something went wrong, sorry :3");
+        }
+        emailResponse();
+      });
   };
 
   const handleCancel = (e) => {
@@ -38,9 +63,31 @@ const Contact = () => {
       >
         <div className="loading" />
       </div>
-      <Title>Contact</Title>
       <div className="center">
-        <div className="contact-info">info placeholder</div>
+        <div className="contact-info">
+          <Title>Contact</Title>
+          <div className="info-center">
+            <p>
+              Contact me via email, phone or text. <br />
+              or use my custom mailer right here!
+              <br /> I will try to respond within 24hours
+            </p>
+            <div className="contact-data">
+              <p>
+                <span className="fa-fw">
+                  <AiOutlineMail />
+                </span>{" "}
+                chouweihan@gmail.com
+              </p>
+              <p>
+                <span className="fa-fw">
+                  <AiOutlinePhone />
+                </span>{" "}
+                604-992-7988
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="form-container">
           <form className="form">
             <div className="inputs">
@@ -59,7 +106,7 @@ const Contact = () => {
             </div>
             <DraftJS />
             <div className="error-msg">
-              <p>error message placeholder</p>
+              <p>{error}</p>
             </div>
             <div className="button-container">
               <button
@@ -164,10 +211,90 @@ const Wrapper = styled.section`
       background-color: #ff5;
     }
   }
+
+  .contact-info {
+    .info-center {
+      padding-top: 3rem;
+      display: grid;
+      place-content: center;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      /* font-family: var(--font-asap); */
+      /* font-family: var(--font-roboto); */
+      color: var(--color-logo-dark);
+      font-size: 1rem;
+    }
+  }
+
+  .contact-data {
+    margin-top: 2rem;
+    p {
+      display: flex;
+      vertical-align: middle;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      padding: 0;
+      padding-bottom: 0.8rem;
+      text-align: left;
+      transition: var(--transition);
+      :hover {
+        color: var(--color-p-4);
+      }
+    }
+    span {
+      padding: 0;
+      font-size: 2rem;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .center {
+    padding-top: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .info-center {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-data {
+      margin-top: 0;
+    }
+  }
+
   @media screen and (min-width: 992px) {
+    padding: 6rem 0;
+
     .center {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-info {
+      .info-center {
+        grid-template-columns: auto;
+        padding-top: 2rem;
+        gap: 0;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .contact-data {
+      margin-top: 3rem;
+      p {
+        font-size: 1.4rem;
+      }
+      span {
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 `;
