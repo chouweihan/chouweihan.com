@@ -222,8 +222,6 @@ const Wrapper = styled.section`
       margin: 0;
       padding: 0;
       text-align: center;
-      /* font-family: var(--font-asap); */
-      /* font-family: var(--font-roboto); */
       color: var(--color-logo-dark);
       font-size: 1.2rem;
     }
@@ -239,6 +237,7 @@ const Wrapper = styled.section`
       padding: 0;
       padding-bottom: 0.8rem;
       text-align: left;
+
       transition: var(--transition);
       :hover {
         color: var(--color-p-4);
@@ -246,7 +245,6 @@ const Wrapper = styled.section`
     }
     span {
       padding: 0;
-      padding-top: 0.15rem;
       font-size: 1.4rem;
       margin: 0;
       margin-right: 1.3rem;
