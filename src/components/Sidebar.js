@@ -24,8 +24,10 @@ const Sidebar = () => {
               return (
                 <Link to={link.url} key={link.id} onClick={closeSidebar}>
                   <li className="link">
-                    <span className="fa-fw">{link.icon}</span>
-                    <p className="link-text">{link.text}</p>
+                    <p className="link-text">
+                      <span className="fa-fw">{link.icon}</span>
+                      {link.text}
+                    </p>
                   </li>
                 </Link>
               );
@@ -119,7 +121,7 @@ const SidebarWrapper = styled.aside`
     opacity: 0.9;
     display: flex;
     padding-right: 2.1rem;
-    align-self: center;
+    align-items: center;
   }
 
   .link {
