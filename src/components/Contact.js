@@ -70,7 +70,7 @@ const Contact = () => {
             <p>
               Contact me via email, phone or text. <br />
               or use my custom mailer right here!
-              <br /> I will try to respond within 24hours
+              <br /> I will try to respond within 24 hours
             </p>
             <div className="contact-data">
               <p>
@@ -225,7 +225,7 @@ const Wrapper = styled.section`
       /* font-family: var(--font-asap); */
       /* font-family: var(--font-roboto); */
       color: var(--color-logo-dark);
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -234,7 +234,7 @@ const Wrapper = styled.section`
     p {
       display: flex;
       vertical-align: middle;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       padding: 0.5rem;
       padding: 0;
       padding-bottom: 0.8rem;
@@ -246,8 +246,10 @@ const Wrapper = styled.section`
     }
     span {
       padding: 0;
-      font-size: 2rem;
-      margin-right: 1rem;
+      padding-top: 0.15rem;
+      font-size: 1.4rem;
+      margin: 0;
+      margin-right: 1.3rem;
       display: flex;
       align-items: center;
     }
@@ -290,10 +292,11 @@ const Wrapper = styled.section`
       margin-top: 3rem;
       p {
         font-size: 1.4rem;
+        margin-bottom: 1rem;
       }
       span {
+        font-size: 1.8rem;
         margin-right: 1.5rem;
-        margin-bottom: 1rem;
       }
     }
   }
