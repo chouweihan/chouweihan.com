@@ -18,7 +18,6 @@ const Hero = () => {
             <h1 className="firstName">Wei-Han</h1>
             <h1 className="lastName">Chou</h1>
           </div>
-
           <h2>Aspiring Developer</h2>
           <p>
             Hi, Welcome to my site! Here you will find information about me and
@@ -224,6 +223,13 @@ const HeroWrapper = styled.div`
     .icon-link {
       font-size: 2.5rem;
     }
+
+    .name {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 1.5rem;
+    }
+
     .hero-img {
       img {
         min-height: 75%;
@@ -233,7 +239,7 @@ const HeroWrapper = styled.div`
     .hero-info {
       .firstName {
         font-size: 5.5rem;
-        padding-left: 10rem;
+        padding-left: 0rem;
       }
       .lastName {
         align-self: auto;

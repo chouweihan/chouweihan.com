@@ -137,7 +137,6 @@ const SidebarWrapper = styled.aside`
     opacity: 0.9;
     letter-spacing: 1px;
     font-weight: 300;
-    /* padding-left: 2rem; */
     text-transform: capitalize;
     color: var(--color-background);
   }

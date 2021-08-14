@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Title, DraftJS } from "./";
@@ -11,6 +11,26 @@ const Contact = () => {
   const [title, setTitle] = useState("");
   const [confirm, setConfirm] = useState(false);
   const [error, setError] = useState("");
+  const [snack, setSnack] = useState(false);
+  const [snackText, setSnackText] = useState("");
+
+  const copyToClipBoard = (text) => {
+    navigator.clipboard.writeText(text);
+    showSnack("copied to clipboard");
+  };
+
+  const showSnack = (message) => {
+    setSnack(true);
+    setSnackText(message);
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSnack(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [snack]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,23 +50,24 @@ const Contact = () => {
     axios
       .post(process.env.REACT_APP_MAIL_URL, emailBody)
       .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
+        if (res && res.status === 200) {
           setTitle("");
           setEmail("");
           emailResponse(true, res);
+          showSnack("email sent!");
         } else {
           setError("Something went wrong, sorry :3");
-          emailResponse();
+          emailResponse("Something went wrong, Please try again later");
         }
       })
       .catch((err) => {
         const { response } = err;
-        if (response.status === 400) {
+        if (response && response.status === 400) {
           setError(response.data.err);
         } else {
           setError("Something went wrong, sorry :3");
         }
+        showSnack("Something went wrong, Please try again later");
         emailResponse();
       });
   };
@@ -58,6 +79,9 @@ const Contact = () => {
 
   return (
     <Wrapper className="section">
+      <div id="snackbar" className={`${snack ? "show" : ""}`}>
+        {snackText}
+      </div>
       <div
         className={`loading-container ${emailLoading ? "loading-active" : ""}`}
       >
@@ -73,13 +97,13 @@ const Contact = () => {
               <br /> I will try to respond within 24 hours
             </p>
             <div className="contact-data">
-              <p>
+              <p onClick={() => copyToClipBoard("chouweihan@gmail.com")}>
                 <span className="fa-fw">
                   <AiOutlineMail />
                 </span>{" "}
                 chouweihan@gmail.com
               </p>
-              <p>
+              <p onClick={() => copyToClipBoard("6049927988")}>
                 <span className="fa-fw">
                   <AiOutlinePhone />
                 </span>{" "}
@@ -240,7 +264,7 @@ const Wrapper = styled.section`
 
       transition: var(--transition);
       :hover {
-        color: var(--color-p-4);
+        color: var(--color-gold-dark);
       }
     }
     span {
@@ -259,7 +283,7 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 768px) {
     .info-center {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto 1fr;
       gap: 2rem;
     }
 
