@@ -48,7 +48,7 @@ const Contact = () => {
     };
 
     axios
-      .post(process.env.REACT_APP_MAIL_URL, emailBody)
+      .post("http://localhost:5000", emailBody)
       .then((res) => {
         if (res && res.status === 200) {
           setTitle("");
