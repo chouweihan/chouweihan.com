@@ -34,7 +34,6 @@ const DraftJS = () => {
   }
 
   function mapKeyToEditorCommand(e) {
-    //tab
     if (e.keyCode === 9) {
       const newEditorState = RichUtils.onTab(e, editorState, 3);
       if (newEditorState !== editorState) {
@@ -102,82 +101,113 @@ const DraftJS = () => {
 
 // styled components
 const DraftWrapper = styled.div`
-  background: var(--color-logo-dark);
-  border-bottom: 2px solid var(--color-gold);
-  border-right: 2px solid var(--color-gold);
-  border-left: 2px solid var(--color-gold);
-  font-size: 1.5rem;
+  border: none;
+  box-shadow: var(--custom-shadow-2);
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
   width: 100%;
+  color: var(--color-logo-dark);
   font-family: var(--font);
 
   .RichEditor-editor {
-    border-top: 2px solid var(--color-gold);
     cursor: text;
-    font-size: 1.5rem;
-    margin-top: 0.8rem;
-    padding: 1rem 1rem;
+    color: var(--color-logo-dark);
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 0rem 1rem;
   }
 
   .RichEditor-editor .public-DraftEditorPlaceholder-root,
   .RichEditor-editor .public-DraftEditor-content {
     margin: 0 -15px -15px;
     padding: 1rem 1rem;
-    color: var(--color-gold);
-    font-size: 1.5rem;
+    color: var(--color-logo-dark-a);
+    font-size: 1.2rem;
   }
 
   .RichEditor-editor .public-DraftEditor-content {
-    min-height: 5rem;
-    font-size: 1.5rem;
-    color: var(--color-background);
+    min-height: 9rem;
+    font-size: 1.1rem;
+    color: var(--color-logo-dark);
   }
 
   .RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
     display: none;
   }
 
-  .RichEditor-editor .RichEditor-blockquote {
-    border-left: 5px solid #eee;
-    color: #666;
-    background-color: white;
-    font-family: "Hoefler Text", "Georgia", serif;
-    font-style: italic;
-    margin: 16px 0;
-    padding: 10px 20px;
-  }
-
   .RichEditor-editor .public-DraftStyleDefault-pre {
-    background-color: rgba(226, 237, 253, 0.2);
+    background-color: rgba(226, 237, 253, 0.4);
     font-family: "Inconsolata", "Menlo", "Consolas", monospace;
-    font-size: 1.5rem;
-    padding: 20px;
+    font-size: 1rem;
+    padding: 15px;
   }
 
   .RichEditor-controls {
-    font-family: "Helvetica", sans-serif;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-asap);
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
     user-select: none;
-    padding: 0.2rem 1rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.3rem;
   }
 
   .RichEditor-styleButton {
-    /* color: #999; */
+    min-height: 1rem;
+    span {
+      padding: 0;
+      margin: 0;
+      display: grid;
+      padding: 8px;
+      place-items: center;
+    }
+    border-radius: 50%;
     cursor: pointer;
-    margin-right: 16px;
-    padding: 2px 0;
-    color: var(--color-gold);
+    margin-right: 0.4rem;
+    color: var(--color-logo-dark-a);
     display: inline-block;
     font-weight: 500;
     font-family: var(--font);
     transition: var(--transition);
+    .fa-fw {
+      padding: 4px 7px;
+    }
     :hover {
-      color: var(--color-background);
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 
   .RichEditor-activeButton {
-    color: var(--color-logo);
+    color: var(--color-logo-dark);
+    background-color: var(--color-logo);
+  }
+
+  @media screen and (min-width: 992px) {
+    .RichEditor-controls {
+      font-size: 1.4rem;
+    }
+
+    .RichEditor-styleButton {
+      span {
+        padding: 10px;
+      }
+      .fa-fw {
+        padding: 6px 9px;
+      }
+    }
+
+    .RichEditor-editor .public-DraftEditor-content {
+      font-size: 1.25rem;
+    }
+
+    .RichEditor-editor .public-DraftEditor-content {
+      min-height: 11rem;
+      font-size: 1.2rem;
+    }
   }
 `;
 

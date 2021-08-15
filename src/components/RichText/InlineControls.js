@@ -1,11 +1,17 @@
 import React from "react";
 import StyleButton from "./StyleButton";
+import {
+  BsTypeBold,
+  BsTypeItalic,
+  BsTypeUnderline,
+  BsFonts,
+} from "react-icons/bs";
 
 var INLINE_STYLES = [
-  { label: "Bold", style: "BOLD" },
-  { label: "Italic", style: "ITALIC" },
-  { label: "Underline", style: "UNDERLINE" },
-  { label: "Monospace", style: "CODE" },
+  { label: <BsTypeBold />, style: "BOLD" },
+  { label: <BsTypeItalic />, style: "ITALIC" },
+  { label: <BsTypeUnderline />, style: "UNDERLINE" },
+  { label: <BsFonts />, style: "CODE" },
 ];
 
 const InlineStyleControls = ({ onToggle, editorState }) => {
@@ -13,11 +19,11 @@ const InlineStyleControls = ({ onToggle, editorState }) => {
 
   return (
     <div className="RichEditor-controls">
-      {INLINE_STYLES.map((type) => (
+      {INLINE_STYLES.map((type, index) => (
         <StyleButton
-          key={type.label}
+          key={index}
           active={currentStyle.has(type.style)}
-          label={type.label}
+          label={<span>{type.label}</span>}
           onToggle={onToggle}
           style={type.style}
         />

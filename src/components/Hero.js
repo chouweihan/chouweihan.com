@@ -220,6 +220,11 @@ const HeroWrapper = styled.div`
   }
 
   @media screen and (min-width: 1320px) {
+    .hero-center {
+      /* padding-left: 5rem; */
+      /* max-width: var(--max-width); */
+    }
+
     .icon-link {
       font-size: 2.5rem;
     }
@@ -257,6 +262,7 @@ const HeroWrapper = styled.div`
 
   @media screen and (min-width: 1700px) {
     .hero-center {
+      padding-left: 2.5rem;
       grid-template-columns: 1fr 1fr;
       gap: 0;
     }

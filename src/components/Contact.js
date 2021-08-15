@@ -8,7 +8,7 @@ import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 const Contact = () => {
   const { sendEmail, emailLoading, emailResponse, html } = useContactContext();
   const [email, setEmail] = useState("");
-  const [title, setTitle] = useState("");
+  const [subject, setSubject] = useState("");
   const [confirm, setConfirm] = useState(false);
   const [error, setError] = useState("");
   const [snack, setSnack] = useState(false);
@@ -42,7 +42,7 @@ const Contact = () => {
     setConfirm(false);
     sendEmail();
     const emailBody = {
-      title: title,
+      subject: subject,
       email: email,
       body: html,
     };
@@ -51,7 +51,7 @@ const Contact = () => {
       .post(process.env.REACT_APP_MAIL_URL, emailBody)
       .then((res) => {
         if (res && res.status === 200) {
-          setTitle("");
+          setSubject("");
           setEmail("");
           emailResponse(true, res);
           showSnack("email sent!");
@@ -64,6 +64,7 @@ const Contact = () => {
         const { response } = err;
         if (response && response.status === 400) {
           setError(response.data.err);
+          showSnack(response.data.err);
         } else {
           setError("Something went wrong, sorry :3");
         }
@@ -114,20 +115,19 @@ const Contact = () => {
         </div>
         <div className="form-container">
           <form className="form">
-            <div className="inputs">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+
             <DraftJS />
             <div className="error-msg">
               <p>{error}</p>
@@ -164,6 +164,28 @@ const Wrapper = styled.section`
   background-color: var(--color-background);
   position: relative;
 
+  .form {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  input {
+    background-color: white;
+    padding: 0.8rem 1rem;
+    color: var(--color-logo-dark);
+    border: none;
+    box-shadow: var(--custom-shadow-2);
+    border-radius: 5px;
+    font-family: var(--font-roboto);
+    font-size: 1.1rem;
+  }
+
+  input::placeholder {
+    color: var(--color-logo-dark-a);
+    font-size: 1rem;
+    opacity: 1;
+  }
+
   .loading-container {
     display: none;
     position: absolute;
@@ -191,27 +213,6 @@ const Wrapper = styled.section`
     padding-top: 3rem;
   }
 
-  .inputs {
-    display: flex;
-    flex-direction: column;
-    border-top: 2px solid var(--color-gold);
-    border-right: 2px solid var(--color-gold);
-    border-left: 2px solid var(--color-gold);
-  }
-
-  input {
-    background-color: var(--color-logo-dark);
-    padding: 1rem 1rem;
-    color: var(--color-background);
-    border: none;
-    font-size: 1.5rem;
-  }
-
-  input::placeholder {
-    color: var(--color-gold);
-    font-size: 1rem;
-    opacity: 1;
-  }
   .contact-info {
     width: 100%;
     margin-bottom: 3rem;
@@ -243,11 +244,12 @@ const Wrapper = styled.section`
       place-content: center;
     }
     p {
+      font-weight: 300;
       margin: 0;
       padding: 0;
       text-align: center;
       color: var(--color-logo-dark);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -256,7 +258,7 @@ const Wrapper = styled.section`
     p {
       display: flex;
       vertical-align: middle;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       padding: 0.5rem;
       padding: 0;
       padding-bottom: 0.8rem;
@@ -285,9 +287,12 @@ const Wrapper = styled.section`
     .info-center {
       grid-template-columns: auto 1fr;
       gap: 2rem;
+      place-items: center;
     }
 
     .contact-data {
+      padding-left: 2.5rem;
+      padding-top: 0.5rem;
       margin-top: 0;
     }
   }
@@ -295,9 +300,19 @@ const Wrapper = styled.section`
   @media screen and (min-width: 992px) {
     padding: 6rem 0;
 
+    input {
+      padding: 0.9rem 1.1rem;
+      font-size: 1.2rem;
+    }
+
+    input::placeholder {
+      font-size: 1.1rem;
+    }
+
     .center {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 4rem;
     }
 
     .contact-info {
@@ -305,15 +320,17 @@ const Wrapper = styled.section`
         grid-template-columns: auto;
         padding-top: 2rem;
         gap: 0;
+        place-items: inherit;
       }
       p {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
     }
     .contact-data {
       margin-top: 3rem;
+      padding-left: 0;
       p {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
       }
       span {

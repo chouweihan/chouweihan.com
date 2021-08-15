@@ -4,8 +4,6 @@ import reducer from "./contact-reducer";
 
 const initialState = {
   html: "",
-  title: "",
-  email: "",
   response: {},
   emailLoading: false,
 };

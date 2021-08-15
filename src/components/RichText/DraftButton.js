@@ -1,5 +1,7 @@
 import React from "react";
 import StyleButton from "./StyleButton";
+import { AiOutlineOrderedList, AiOutlineUnorderedList } from "react-icons/ai";
+import { BsCode } from "react-icons/bs";
 
 const getBlockStyle = (block) => {
   switch (block.getType()) {
@@ -15,9 +17,12 @@ const BLOCK_TYPES = [
   { label: "H2", style: "header-two" },
   { label: "H3", style: "header-three" },
   { label: "H4", style: "header-four" },
-  { label: "UL", style: "unordered-list-item" },
-  { label: "OL", style: "ordered-list-item" },
-  { label: "Code Block", style: "code-block" },
+];
+
+const BLOCK_TYPES2 = [
+  { label: <AiOutlineUnorderedList />, style: "unordered-list-item" },
+  { label: <AiOutlineOrderedList />, style: "ordered-list-item" },
+  { label: <BsCode />, style: "code-block" },
 ];
 
 const BlockStyleControls = (props) => {
@@ -29,16 +34,29 @@ const BlockStyleControls = (props) => {
     .getType();
 
   return (
-    <div className="RichEditor-controls">
-      {BLOCK_TYPES.map((type) => (
-        <StyleButton
-          key={type.label}
-          active={type.style === blockType}
-          label={type.label}
-          onToggle={onToggle}
-          style={type.style}
-        />
-      ))}
+    <div>
+      <div className="RichEditor-controls">
+        {BLOCK_TYPES.map((type, index) => (
+          <StyleButton
+            key={index}
+            active={type.style === blockType}
+            onToggle={onToggle}
+            label={<span className="fa-fw">{type.label}</span>}
+            style={type.style}
+          />
+        ))}
+      </div>
+      <div className="RichEditor-controls">
+        {BLOCK_TYPES2.map((type, index) => (
+          <StyleButton
+            key={index}
+            active={type.style === blockType}
+            onToggle={onToggle}
+            label={<span>{type.label}</span>}
+            style={type.style}
+          />
+        ))}
+      </div>
     </div>
   );
 };
