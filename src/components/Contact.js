@@ -16,11 +16,11 @@ const Contact = () => {
 
   const copyToClipBoard = (text) => {
     navigator.clipboard.writeText(text);
+    setError(false);
     showSnack("copied to clipboard");
   };
 
   const showSnack = (message) => {
-    setError(false);
     setSnack(true);
     setSnackText(message);
   };
@@ -28,6 +28,7 @@ const Contact = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSnack(false);
+      setError(false);
     }, 3000);
 
     return () => clearTimeout(timeout);
@@ -55,7 +56,6 @@ const Contact = () => {
           setSubject("");
           setEmail("");
           emailResponse(true, res);
-          setError(false);
           showSnack("email sent!");
         } else {
           setError("Something went wrong, sorry :3");
