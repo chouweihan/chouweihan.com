@@ -101,8 +101,7 @@ const DraftJS = () => {
 
 // styled components
 const DraftWrapper = styled.div`
-  border: none;
-  box-shadow: var(--custom-shadow-2);
+  border: 1px solid var(--color-logo-dark-a-2);
   background-color: white;
   border-radius: 5px;
   font-size: 1rem;
@@ -127,7 +126,7 @@ const DraftWrapper = styled.div`
   }
 
   .RichEditor-editor .public-DraftEditor-content {
-    min-height: 9rem;
+    min-height: 12rem;
     font-size: 1.1rem;
     color: var(--color-logo-dark);
   }

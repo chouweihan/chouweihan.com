@@ -10,7 +10,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [confirm, setConfirm] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
   const [snack, setSnack] = useState(false);
   const [snackText, setSnackText] = useState("");
 
@@ -20,6 +20,7 @@ const Contact = () => {
   };
 
   const showSnack = (message) => {
+    setError(false);
     setSnack(true);
     setSnackText(message);
   };
@@ -54,6 +55,7 @@ const Contact = () => {
           setSubject("");
           setEmail("");
           emailResponse(true, res);
+          setError(false);
           showSnack("email sent!");
         } else {
           setError("Something went wrong, sorry :3");
@@ -63,12 +65,12 @@ const Contact = () => {
       .catch((err) => {
         const { response } = err;
         if (response && response.status === 400) {
-          setError(response.data.err);
+          setError(true);
           showSnack(response.data.err);
         } else {
-          setError("Something went wrong, sorry :3");
+          setError(true);
+          showSnack("Something went wrong, Please try again later");
         }
-        showSnack("Something went wrong, Please try again later");
         emailResponse();
       });
   };
@@ -80,7 +82,11 @@ const Contact = () => {
 
   return (
     <Wrapper className="section">
-      <div id="snackbar" className={`${snack ? "show" : ""}`}>
+      <div
+        className={`snackbar ${snack ? "show" : ""} ${
+          error ? "error-text" : ""
+        }`}
+      >
         {snackText}
       </div>
       <div
@@ -129,25 +135,26 @@ const Contact = () => {
             />
 
             <DraftJS />
-            <div className="error-msg">
-              <p>{error}</p>
-            </div>
+
             <div className="button-container">
               <button
-                className={`submit-button ${confirm ? "inactive" : "active"}`}
+                className={`button ${confirm ? "inactive" : "active"}`}
+                disabled={confirm}
                 onClick={handleSubmit}
               >
                 send
               </button>
               <button
-                className={`submit-button ${confirm ? "active" : "inactive"}`}
+                className={`button ${confirm ? "active" : "inactive"} confirm`}
                 type="submit"
+                disabled={!confirm}
                 onClick={handleConfirm}
               >
                 confirm
               </button>
               <button
-                className={`submit-button ${confirm ? "active" : "inactive"}`}
+                className={`button ${confirm ? "active" : "inactive"} cancel`}
+                disabled={!confirm}
                 onClick={handleCancel}
               >
                 cancel
@@ -173,8 +180,7 @@ const Wrapper = styled.section`
     background-color: white;
     padding: 0.8rem 1rem;
     color: var(--color-logo-dark);
-    border: none;
-    box-shadow: var(--custom-shadow-2);
+    border: 1px solid var(--color-logo-dark-a-2);
     border-radius: 5px;
     font-family: var(--font-roboto);
     font-size: 1.1rem;
@@ -220,20 +226,50 @@ const Wrapper = styled.section`
 
   .button-container {
     display: flex;
+    position: relative;
   }
 
-  .submit-button {
+  .button {
+    width: 6.5rem;
+    height: 2.5rem;
+    position: relative;
     margin-right: 1rem;
-    min-width: 5rem;
-    margin-top: 1rem;
-    padding: 0.5rem 0.6rem;
     background: transparent;
-    border: 1px solid var(--color-logo-dark-2);
-    color: var(--color-logo-dark-2);
+    border: 1px solid var(--color-logo-dark-a);
+    border-radius: 3px;
+    color: var(--color-logo-dark-a-3);
     font-size: 1rem;
-    transition: var(--transition);
+    cursor: pointer;
+    transition: 0.4s;
     :hover {
-      background-color: #ff5;
+      padding-right: 25px;
+      padding-left: 8px;
+    }
+    :hover:after {
+      opacity: 1;
+      right: 10px;
+    }
+  }
+
+  .button:after {
+    content: "»";
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+
+  .confirm:hover {
+    background-color: var(--color-lighter);
+  }
+
+  .cancel:hover {
+    background-color: var(--color-logo-red);
+  }
+
+  @media screen and (min-width: 992px) {
+    .button {
+      font-size: 1.2rem;
     }
   }
 
@@ -257,6 +293,7 @@ const Wrapper = styled.section`
     margin-top: 2rem;
     p {
       display: flex;
+      letter-spacing: 0.8px;
       vertical-align: middle;
       font-size: 1.3rem;
       padding: 0.5rem;
@@ -269,9 +306,10 @@ const Wrapper = styled.section`
         color: var(--color-gold-dark);
       }
     }
+
     span {
       padding: 0;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin: 0;
       margin-right: 1.3rem;
       display: flex;
@@ -299,6 +337,10 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 992px) {
     padding: 6rem 0;
+
+    .form-container {
+      padding-top: 1rem;
+    }
 
     input {
       padding: 0.9rem 1.1rem;
@@ -330,11 +372,11 @@ const Wrapper = styled.section`
       margin-top: 3rem;
       padding-left: 0;
       p {
-        font-size: 1.5rem;
+        font-size: 1.5 rem;
         margin-bottom: 1rem;
       }
       span {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         margin-right: 1.5rem;
       }
     }
