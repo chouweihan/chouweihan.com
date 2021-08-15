@@ -56,9 +56,9 @@ const Contact = () => {
           setSubject("");
           setEmail("");
           emailResponse(true, res);
-          showSnack("email sent!");
+          showSnack("Email sent!");
         } else {
-          setError("Something went wrong, sorry :3");
+          setError(true);
           emailResponse("Something went wrong, Please try again later");
         }
       })
