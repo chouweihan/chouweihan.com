@@ -8,10 +8,12 @@ import {
   SingleProjectPage,
   AboutPage,
 } from "./pages";
+import ScrollToTop from "./utility/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Sidebar />
       <Switch>
