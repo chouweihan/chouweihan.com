@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import axios from "axios";
 import { Title, DraftJS } from "./";
 import { useContactContext } from "../context-reducers/contact-context";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
-const Contact = () => {
+const Contact = ({ page }) => {
   const { sendEmail, emailLoading, emailResponse, html } = useContactContext();
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <Wrapper className="section">
+    <Wrapper className="section" page={page}>
       <div
         className={`snackbar ${snack ? "show" : ""} ${
           error ? "error-text" : ""
@@ -171,6 +171,12 @@ const Wrapper = styled.section`
   background-color: var(--color-background);
   position: relative;
 
+  ${({ page }) =>
+    page &&
+    css`
+      min-height: calc(100vh - 3.7rem - 7.5rem);
+    `}
+
   .form {
     display: grid;
     gap: 1.5rem;
@@ -213,10 +219,6 @@ const Wrapper = styled.section`
 
   .inactive {
     display: none;
-  }
-
-  .center {
-    padding-top: 3rem;
   }
 
   .contact-info {

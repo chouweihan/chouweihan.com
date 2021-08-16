@@ -281,3 +281,11 @@ p {
     opacity: 0;
   }
 }
+
+.nav {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 3.7rem;
+  background-color: var(--color-logo-dark-2);
+}
