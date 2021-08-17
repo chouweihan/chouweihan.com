@@ -10,13 +10,13 @@ const ContactPage = () => {
       <video className="videoTag" autoPlay loop muted>
         <source src={video} type="video/mp4" />
       </video>
-      <Contact page={true} />
+      <Contact page={true.toString()} />
     </PageWrapper>
   );
 };
 
 const PageWrapper = styled.div`
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   .videoTag {
     position: fixed;
     display: block;

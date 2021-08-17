@@ -7,13 +7,13 @@ import {
   ContentState,
 } from "draft-js";
 import "draft-js/dist/Draft.css";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import BlockStyleControls from "./DraftButton";
 import InlineStyleControls from "./InlineControls";
 import { stateToHTML } from "draft-js-export-html";
 import { useContactContext } from "../../context-reducers/contact-context";
 
-const DraftJS = () => {
+const DraftJS = ({ page }) => {
   const { setHTML, response } = useContactContext();
   const [editorState, setEditorState] = React.useState(() =>
     EditorState.createEmpty()
@@ -75,7 +75,7 @@ const DraftJS = () => {
   }, [response]);
 
   return (
-    <DraftWrapper>
+    <DraftWrapper page={page}>
       <BlockStyleControls
         editorState={editorState}
         onToggle={toggleBlockType}
@@ -102,7 +102,7 @@ const DraftJS = () => {
 // styled components
 const DraftWrapper = styled.div`
   border: 1px solid var(--color-logo-dark-a-2);
-  background-color: white;
+  background: transparent;
   border-radius: 5px;
   font-size: 1rem;
   width: 100%;
@@ -208,6 +208,37 @@ const DraftWrapper = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  ${({ page }) =>
+    page &&
+    css`
+      border: 1px solid var(--color-logo-a);
+      color: var(--color-logo-a);
+      .RichEditor-editor {
+        color: white;
+      }
+
+      .RichEditor-editor .public-DraftEditorPlaceholder-root,
+      .RichEditor-editor .public-DraftEditor-content {
+        color: var(--color-logo-a);
+      }
+      .RichEditor-editor .public-DraftEditor-content {
+        color: var(--color-gold);
+      }
+      .RichEditor-controls {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .RichEditor-styleButton {
+        color: var(--color-logo-a);
+        :hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+      .RichEditor-activeButton {
+        color: var(--color-logo-dark);
+        background-color: var(--color-light);
+      }
+    `}
 `;
 
 export default DraftJS;

@@ -96,7 +96,7 @@ const Contact = ({ page }) => {
       </div>
       <div className="center">
         <div className="contact-info">
-          <Title>Contact</Title>
+          <Title color={page}>Contact</Title>
           <div className="info-center">
             <p>
               Contact me via email, phone or text. <br />
@@ -134,7 +134,7 @@ const Contact = ({ page }) => {
               onChange={(e) => setSubject(e.target.value)}
             />
 
-            <DraftJS />
+            <DraftJS page={page} />
 
             <div className="button-container">
               <button
@@ -177,7 +177,7 @@ const Wrapper = styled.section`
   }
 
   input {
-    background-color: white;
+    background: transparent;
     padding: 0.8rem 1rem;
     color: var(--color-logo-dark);
     border: 1px solid var(--color-logo-dark-a-2);
@@ -385,7 +385,30 @@ const Wrapper = styled.section`
       background: none;
 
       .button {
-        background-color: var(--color-background);
+        border: 1px solid var(--color-logo-a);
+        color: var(--color-logo-a);
+      }
+
+      .cancel, .confirm {
+        :hover {
+          color: var(--color-logo-dark);
+          border: 1px solid var(--color-logo-dark);
+        }
+      }
+
+      input {
+        border: 1px solid var(--color-logo-a);
+        color: var(--color-gold);
+
+      }
+
+      input::placeholder {
+        color: var(--color-logo-a);
+      }
+
+      .contact-info {
+      p {
+        color: var(--color-light);
       }
 
       @media screen and (min-width: 768px) {
