@@ -24,6 +24,7 @@ const ErrorWrapper = styled.div`
 
   .background-wrapper {
     z-index: -1;
+    background-color: var(--color-background);
     top: 0;
     min-height: calc(100vh - 6rem);
     min-width: 100vw;
@@ -53,31 +54,28 @@ const ErrorWrapper = styled.div`
   .ret-button {
     border: none;
     position: absolute;
-    border 1px solid var(--color-logo);
+    border: 1px solid var(--color-logo-dark-2);
     padding: 0.6rem 0.7rem;
     font-weight: 500;
     border-radius: 8px;
-    font-size: 1.1rem;
-    color: var(--color-logo);
-    background-color: rgba(0,0,0, 0.8);
-    /* font-family: var(--font-asap); */
+    font-size: 1rem;
+    color: var(--color-logo-dark-2);
     text-transform: uppercase;
-    bottom: 12rem;
+    bottom: 11rem;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.3s ease;
     :hover {
-      border 1px solid var(--color-gold);
-      color: var(--color-gold);
-      background-color: rgba(0,0,0,1);
+      border: 1px solid var(--color-background);
+      color: var(--color-background);
+      background-color: var(--color-logo-dark-2);
     }
 
     @media screen and (min-width: 992px) {
-      bottom:10rem;
-       padding: 1rem 1.2rem;
-       font-size: 1.5rem;
+      bottom: 10rem;
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
     }
-
   }
 
   h2,
