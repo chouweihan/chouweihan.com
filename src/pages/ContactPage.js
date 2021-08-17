@@ -16,11 +16,11 @@ const ContactPage = () => {
 };
 
 const PageWrapper = styled.div`
-  /* background-color: var(--color-background); */
-  /* width: 100%; */
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   .videoTag {
     position: fixed;
+    display: block;
+    margin: 0 auto;
     top: 0;
     left: 0;
     z-index: -1;
