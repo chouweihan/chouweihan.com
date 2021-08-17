@@ -171,12 +171,6 @@ const Wrapper = styled.section`
   background-color: var(--color-background);
   position: relative;
 
-  ${({ page }) =>
-    page &&
-    css`
-      min-height: calc(100vh - 3.7rem - 7.5rem);
-    `}
-
   .form {
     display: grid;
     gap: 1.5rem;
@@ -383,6 +377,23 @@ const Wrapper = styled.section`
       }
     }
   }
+
+  ${({ page }) =>
+    page &&
+    css`
+      min-height: calc(100vh - 3.7rem - 7.5rem);
+      background: none;
+
+      .button {
+        background-color: var(--color-background);
+      }
+
+      @media screen and (min-width: 768px) {
+        p {
+          font-weight: 400 !important;
+        }
+      }
+    `}
 `;
 
 export default Contact;
