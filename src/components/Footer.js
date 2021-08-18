@@ -20,7 +20,7 @@ const Footer = () => {
       </ul>
       <SocialLinks />
       <p>
-        All Rights Reserved <span>&#169; chouweihan.com</span>
+        Wei-Han Chou <span>&#169; chouweihan.com</span>
       </p>
     </FooterWrapper>
   );

@@ -51,7 +51,12 @@ const HeroWrapper = styled.div`
     min-height: 100vh;
     width: 100%;
     top: 0;
-    background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.7) 10%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.7)
+      ),
       url(${heroBackground}) center/cover no-repeat;
     position: fixed;
     z-index: -1;

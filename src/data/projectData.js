@@ -1,28 +1,49 @@
+import { spendAway01, spendAway02 } from "./images";
+
 export const projects = [
   {
     id: 1,
-    name: "",
+    name: "SpendAway",
+    excerpt: "Fun little android app to help you keep track of your purchases.",
     description: "",
-    categories: [],
+    categories: ["android studio", "java", "kotlin", "firebase"],
     type: "personal",
-    images: [],
-    featured: false,
+    images: [spendAway01, spendAway02],
+    featured: true,
+    year: 2019,
     links: {
-      githubLink: "",
-      liveLink: "",
+      githubLink: "https://github.com/chouweihan/SpendAway",
+      hostedLink: "",
     },
   },
   {
     id: 2,
     name: "",
+    excerpt: "",
     description: "",
     categories: [],
-    type: "personal",
+    type: "group",
     images: [],
     featured: false,
+    year: 2018,
     links: {
       githubLink: "",
-      liveLink: "",
+      hostedLink: "",
+    },
+  },
+  {
+    id: 3,
+    name: "",
+    excerpt: "",
+    description: "",
+    categories: [],
+    type: "learning",
+    images: [],
+    featured: false,
+    year: 2018,
+    links: {
+      githubLink: "",
+      hostedLink: "",
     },
   },
 ];

@@ -11,7 +11,8 @@ const Projects = () => {
 };
 
 const Wrapper = styled.section`
-  background-color: var(--color-logo-dark-2);
+  /* background-color: var(--color-logo-dark-2); */
+  height: 80vh;
 `;
 
 export default Projects;

@@ -169,7 +169,6 @@ const Contact = ({ page }) => {
 
 const Wrapper = styled.section`
   background-color: var(--color-background);
-  position: relative;
 
   .form {
     display: grid;
