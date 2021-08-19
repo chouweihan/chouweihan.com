@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const ExpCard = ({ data }) => {
-  const { name, title, description, images, year, type } = data;
+  const { name, title, description, images, year, type, excerpt } = data;
+  const [read, setRead] = useState(false);
 
   return (
     <CardWrapper>
@@ -18,7 +19,20 @@ const ExpCard = ({ data }) => {
         </div>
         <h2>{title}</h2>
         <h4>{type}</h4>
-        <p>{description}</p>
+        <p>{excerpt}&nbsp;</p>
+        <p
+          className={`read-button ${read ? "read-false" : ""}`}
+          onClick={() => setRead(true)}
+        >
+          {" "}
+          read more...
+        </p>
+
+        <div className={`${read ? "read-active" : "read-false"}`}>
+          {description.map((desc, index) => {
+            return <p key={index}>{desc}</p>;
+          })}
+        </div>
       </div>
     </CardWrapper>
   );
@@ -35,6 +49,21 @@ const CardWrapper = styled.div`
   border-radius: 15px;
   transition: var(--transition);
   font-family: var(--font-roboto);
+
+  .read-button {
+    display: inline;
+    color: #0645ad;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .read-false {
+    display: none;
+  }
+
+  .read-active {
+    display: block;
+  }
 
   .info-header {
     display: flex;
@@ -142,7 +171,7 @@ const CardWrapper = styled.div`
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
   }
 `;
