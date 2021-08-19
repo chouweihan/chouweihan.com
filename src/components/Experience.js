@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "./";
-import { expData } from "../data/expData";
+import { expData } from "../data/expData.js";
 import ExpCard from "./ExpCard";
 
 const Experience = () => {
