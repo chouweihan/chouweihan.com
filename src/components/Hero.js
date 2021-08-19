@@ -65,7 +65,6 @@ const HeroWrapper = styled.div`
   .hero-img {
     display: grid;
     place-items: center;
-    margin-top: 2rem;
     img {
       width: 220px;
       height: 220px;
@@ -136,7 +135,11 @@ const HeroWrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    .hero-center {
+      gap: 1rem;
+    }
     .hero-img {
+      margin-top: 1rem;
       img {
         width: 250px;
         height: 250px;
