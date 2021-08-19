@@ -3,7 +3,7 @@ import bcit2 from "../assets/experience/bcit2.png";
 import wow1 from "../assets/experience/wow1.jpg";
 import wow2 from "../assets/experience/wow2.png";
 
-export const expData = [
+const expData = [
   {
     id: 1,
     name: "BCIT",
@@ -34,3 +34,5 @@ export const expData = [
     year: "2017-2018",
   },
 ];
+
+export { expData };
