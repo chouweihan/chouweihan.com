@@ -37,7 +37,7 @@ const CardWrapper = styled.div`
   border-radius: 15px;
   transition: var(--transition);
   font-family: var(--font-roboto);
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   border: 2px solid var(--color-gold);
   position: relative;
 

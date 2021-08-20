@@ -29,8 +29,9 @@ const Projects = () => {
 };
 
 const Wrapper = styled.section`
-  /* background-color: var(--color-logo-dark-2); */
+  max-width: 80vw;
   padding: 4rem 0;
+  margin: 0 auto;
 
   .projects-center {
     display: grid;
@@ -45,7 +46,7 @@ const Wrapper = styled.section`
     place-items: center;
     gap: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
   .button-container {
@@ -56,6 +57,8 @@ const Wrapper = styled.section`
   .button {
     border: 1px solid var(--color-background);
     padding: 1rem 1rem;
+    white-space: nowrap;
+    border-radius: 5px;
     color: var(--color-background);
     font-size: 1rem;
     font-weight: 500;
