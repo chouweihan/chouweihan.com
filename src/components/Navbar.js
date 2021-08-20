@@ -61,7 +61,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.12s linear;
+  transition: all 0.2s linear;
   background: transparent;
 
   .sidebar-btn {

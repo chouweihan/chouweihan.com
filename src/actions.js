@@ -3,3 +3,7 @@ export const CLOSE_SIDEBAR = "CLOSE_SIDEBAR";
 export const SET_HTML = "SET_HTML";
 export const SEND_EMAIL = "SEND_EMAIL";
 export const EMAIL_RESPONSE = "EMAIL_RESPONSE";
+
+export const GET_PROJECTS = "GET_PROEJCTS";
+export const GET_SINGLE_PROJECT = "GET_SINGLE_PROJECT";
+export const GET_FEATURED_PROJECTS = "GET_FEATURED_PROJECTS";
