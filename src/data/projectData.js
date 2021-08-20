@@ -22,6 +22,7 @@ import {
   tea,
   backroad,
   portfolio,
+  chouweihan,
 } from "./projectImages";
 
 export const projects = [
@@ -74,7 +75,7 @@ export const projects = [
   },
   {
     id: 3,
-    name: "Gerg's Beans Management",
+    name: "Gerg's Beans",
     excerpt:
       "A web application that provides a management and timesheet system to manage employees, projects and work packages. I worked on this app in a group with 12 others.",
     description: [
@@ -104,7 +105,7 @@ export const projects = [
     categories: ["React", "Auth0", "FusionCharts"],
     type: "personal",
     images: githubUser,
-    featured: false,
+    featured: true,
     year: 2021,
     links: {
       githubLink:
@@ -115,7 +116,7 @@ export const projects = [
   {
     id: 5,
     name: "Chou Weihan",
-    excerpt: "This is project is the website you're currently on!",
+    excerpt: "This project is the website you're currently on! Enjoy your stay",
     description: [
       "This is my very own website, I'm using it as my portfolio and for my own self interests!",
       "This website uses React for frontend. All components and data shown are static. The styling on the website is a mixture of CSS and Styled Components.",
@@ -123,8 +124,8 @@ export const projects = [
     ],
     categories: ["React", "Styled Components", "Javascript"],
     type: "personal",
-    images: null,
-    featured: false,
+    images: chouweihan,
+    featured: true,
     year: 2021,
     links: {
       githubLink: "https://github.com/chouweihan/chouweihan.com",
@@ -170,7 +171,7 @@ export const projects = [
     ],
     type: "personal",
     images: jobauth,
-    featured: false,
+    featured: true,
     year: 2021,
     links: {
       githubLink: "https://github.com/chouweihan/express-job-auth",
@@ -227,7 +228,7 @@ export const projects = [
     description: [
       "This is a continuation of my chess project. Pieces can now move vertically up and down three boards. Built in Java and JavaFX. Pieces still follow chess rules when moving up and down the board.",
     ],
-    categories: [],
+    categories: ["Java", "JavaFX"],
     type: "personal",
     images: chess3d,
     featured: false,
@@ -245,7 +246,7 @@ export const projects = [
     description: [
       "This is a chess game I made to practice object orientated programming. It is built with Java and JavaFX. Notable feature includes saving of the game state with Serializable class.",
     ],
-    categories: [],
+    categories: ["Java", "JavaFX"],
     type: "personal",
     images: chess01,
     featured: false,
@@ -257,7 +258,7 @@ export const projects = [
   },
   {
     id: 12,
-    name: "ParkAway ",
+    name: "ParkAway",
     excerpt:
       "ParkAway is a web application that lets users indicate parking spot availability at BCIT. This project was made in a group of 5.",
     description: [
@@ -337,12 +338,12 @@ export const projects = [
     name: "Airtable",
     excerpt:
       "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
-    description: ["Gatsby", "Airtable"],
-    categories: [
+    description: [
       "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
       "This web app mainly created to test out airtable, including writing to the Airtable.",
       "Check out the hosted project!",
     ],
+    categories: ["Gatsby", "Airtable"],
     type: "personal",
     images: airtable,
     featured: false,
@@ -398,7 +399,7 @@ export const projects = [
     description: [
       "This is the back end to my Gatsby Strapi project, it has a few simple collections used to store images and information.",
     ],
-    categories: [],
+    categories: ["Strapi"],
     type: "personal",
     images: strapiBackEnd,
     featured: false,
