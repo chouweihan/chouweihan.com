@@ -65,6 +65,7 @@ const HeroWrapper = styled.div`
   .hero-img {
     display: grid;
     place-items: center;
+    box-shadow: var(--dark-shadow);
     img {
       width: 220px;
       height: 220px;
@@ -276,7 +277,6 @@ const HeroWrapper = styled.div`
     }
     .hero-img {
       margin-top: 1.5rem;
-      /* padding-right: 15rem; */
       img {
         width: 500px;
         height: 500px;
@@ -290,6 +290,11 @@ const HeroWrapper = styled.div`
       .lastName {
         font-size: 6.5rem;
       }
+    }
+  }
+  @media screen and (min-width: 1900px) {
+    .hero-center {
+      padding-left: 4.5rem;
     }
   }
 

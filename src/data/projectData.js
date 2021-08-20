@@ -11,6 +11,17 @@ import {
   chess01,
   dyslexia,
   parkaway,
+  comfy,
+  redux,
+  airtable,
+  mdx,
+  gatsbyStrapi,
+  strapiBackEnd,
+  comfyJS,
+  gallery,
+  tea,
+  backroad,
+  portfolio,
 } from "./projectImages";
 
 export const projects = [
@@ -126,7 +137,7 @@ export const projects = [
     excerpt:
       "A simple node express backend app using Nodemailer to send emails from my website",
     description: [
-      "This is a node backend written with express. It uses Nodemailer to send emails. There are basic validations implemented. The Nodemailer uses gmail OAUTH to send mails.",
+      "This is a backend written in express. It uses Nodemailer to send emails. There are basic validations implemented. The Nodemailer uses gmail OAUTH to send mails.",
       "Feel free to try it out in my Contact section!",
     ],
     categories: ["Express", "Node", "Javascript"],
@@ -271,7 +282,7 @@ export const projects = [
       "This is a project I made at a hackathon to help people with dyslexia read better, by changing fonts and documents into dyslexic friendly fonts.",
     description: [
       "This is a web app made at a hackathon with 4 other people. We decided to build an app that changes images, documents and text into dyslexic friendly fonts.",
-      "Notable features of this app includes images to word processing and export text to pdf",
+      "Notable features of this app includes images to word processing and export text to pdf. It also has a text-to-speech function. The pdf, image processing and text-to-speech are all third party APIs",
     ],
     categories: ["HTML", "CSS", "Javascript"],
     type: "personal",
@@ -283,22 +294,216 @@ export const projects = [
       hostedLink: "",
     },
   },
-];
-
-const template = [
   {
-    id: 13,
-    name: "",
-    excerpt: "",
-    description: [],
-    categories: [],
+    id: 14,
+    name: "Comfy Store",
+    excerpt:
+      "A React web app that reads from a products api and displays it. It uses Auth0 authentication system and stripe as a merchant",
+    description: [
+      "Comfy store is a web app built to be like an actual online vendor. It has cart functions, localstorage, authentication and stripe purchases.",
+      "The products can also be filtered and sorted. Cart items are stored in localstorage.",
+      "Check out the hosted project!",
+      "This is the React version of my pure Javascript project",
+    ],
+    categories: ["React", "CSS", "Auth0", "Stripe"],
     type: "personal",
-    images: null,
+    images: comfy,
     featured: false,
     year: 2021,
     links: {
-      githubLink: "",
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/React/React_Comfy",
+      hostedLink: "https://project-react-comfysloth.netlify.app/",
+    },
+  },
+  {
+    id: 15,
+    name: "React Redux Cart",
+    excerpt: "A very simple application made to test React's redux",
+    description: ["A very simple application made to test React's redux"],
+    categories: ["React"],
+    type: "personal",
+    images: redux,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/React/React-redux-cart",
+      hostedLink: "https://project-react-redux-cart.netlify.app/",
+    },
+  },
+  {
+    id: 16,
+    name: "Airtable",
+    excerpt:
+      "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
+    description: ["Gatsby", "Airtable"],
+    categories: [
+      "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
+      "This web app mainly created to test out airtable, including writing to the Airtable.",
+      "Check out the hosted project!",
+    ],
+    type: "personal",
+    images: airtable,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/Gatsby/gatsby-airtable",
+      hostedLink: "https://project-gatsby-airtable.netlify.app/",
+    },
+  },
+  {
+    id: 17,
+    name: "Gatsby MDX blog",
+    excerpt: "A Gatsby web application that displays different MDX files",
+    description: [
+      "This is a gatsby application that takes MDX files and displays them in a visually appealing manner",
+      "The images are rendered using gatsby remark images",
+      "Check out the hosted project!",
+    ],
+    categories: ["Gatsby", "MDX"],
+    type: "personal",
+    images: mdx,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/Gatsby/gatsby-blog",
+      hostedLink: "https://project-gatsby-mdxblog.netlify.app/",
+    },
+  },
+  {
+    id: 18,
+    name: "This is part of 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
+    excerpt: "",
+    description: [
+      "This is part of 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
+    ],
+    categories: ["Gatsby", "Strapi"],
+    type: "personal",
+    images: gatsbyStrapi,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/Gatsby/gatsby-strapi",
+      hostedLink: "https://project-gatsby-portfolio-strapi.netlify.app/",
+    },
+  },
+  {
+    id: 19,
+    name: "Strapi Back End",
+    excerpt: "This is the back end to my Gatsby Strapi project",
+    description: [
+      "This is the back end to my Gatsby Strapi project, it has a few simple collections used to store images and information.",
+    ],
+    categories: [],
+    type: "personal",
+    images: strapiBackEnd,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink: "https://github.com/chouweihan/strapi-backend",
       hostedLink: "",
+    },
+  },
+  {
+    id: 20,
+    name: "Comfy Store (JS)",
+    excerpt:
+      "This is the Javascript version of my comfy project. It grabs products api and displays it like an actual store vendor site.",
+    description: [
+      "This is the Javascript version of my comfy project. It grabs products api and displays it like an actual store vendor site.",
+      "The app has basic filter and sorting features for products, and a functional cart sidebar.",
+    ],
+    categories: ["Javascript"],
+    type: "personal",
+    images: comfyJS,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/Javascript/JS_Comfy_Store",
+      hostedLink: "https://project-javascript-comfystore.netlify.app",
+    },
+  },
+  {
+    id: 21,
+    name: "Javascript Gallery",
+    excerpt:
+      "This is a javascript project to dispaly a gallery of images. It includes a Modal when clicking on images.",
+    description: [
+      "This is a javascript project to dispaly a gallery of images. It includes a Modal when clicking on images.",
+    ],
+    categories: ["Javascript"],
+    type: "personal",
+    images: gallery,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/Javascript/JS_Gallery",
+      hostedLink: "https://project-javascript-gallery.netlify.app/",
+    },
+  },
+  {
+    id: 22,
+    name: "Backroad",
+    excerpt: "This is a pure HTML and CSS project used to practice flexbox!",
+    description: [
+      "This is pure a HTML and CSS project used to practice flexbox!",
+      "Check it the hosted project!",
+    ],
+    categories: ["HTML", "CSS"],
+    type: "personal",
+    images: backroad,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/HTML_CSS/Backroad",
+      hostedLink: "https://project-htmlcss-backroad.netlify.app",
+    },
+  },
+  {
+    id: 23,
+    name: "Portfolio",
+    excerpt:
+      "This is pure a HTML and CSS project used to practice display Grid!",
+    description: [
+      "This is pure a HTML and CSS project used to practice display Grid!",
+      "Check it the hosted project!",
+    ],
+    categories: ["HTML", "CSS"],
+    type: "personal",
+    images: portfolio,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/HTML_CSS/Portfolio",
+      hostedLink: "https://project-htmlcss-portfolio.netlify.app/",
+    },
+  },
+  {
+    id: 24,
+    name: "Tea Station",
+    excerpt:
+      "This is a pure HTML and CSS project to practice styling and floats",
+    description: [
+      "This is a pure HTML and CSS project to practice styling and floats",
+      "Check it the hosted project!",
+    ],
+    categories: ["HTML", "CSS"],
+    type: "personal",
+    images: tea,
+    featured: false,
+    year: 2021,
+    links: {
+      githubLink:
+        "https://github.com/chouweihan/LearningProjects/tree/main/HTML_CSS/Tea",
+      hostedLink: "https://project-htmlcss-tea.netlify.app/",
     },
   },
 ];

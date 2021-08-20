@@ -55,6 +55,58 @@ const parkaway = importAll(
   require.context("../assets/projects/parkaway", false, /\.(png|jpe?g|svg)$/)
 );
 
+const comfy = importAll(
+  require.context("../assets/projects/comfy", false, /\.(png|jpe?g|svg)$/)
+);
+
+const redux = importAll(
+  require.context("../assets/projects/redux", false, /\.(png|jpe?g|svg)$/)
+);
+
+const airtable = importAll(
+  require.context("../assets/projects/airtable", false, /\.(png|jpe?g|svg)$/)
+);
+
+const mdx = importAll(
+  require.context("../assets/projects/mdx", false, /\.(png|jpe?g|svg)$/)
+);
+
+const gatsbyStrapi = importAll(
+  require.context(
+    "../assets/projects/gatsbyStrapi",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+
+const strapiBackEnd = importAll(
+  require.context(
+    "../assets/projects/strapiBackEnd",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+
+const comfyJS = importAll(
+  require.context("../assets/projects/comfyJS", false, /\.(png|jpe?g|svg)$/)
+);
+
+const gallery = importAll(
+  require.context("../assets/projects/gallery", false, /\.(png|jpe?g|svg)$/)
+);
+
+const backroad = importAll(
+  require.context("../assets/projects/backroad", false, /\.(png|jpe?g|svg)$/)
+);
+
+const tea = importAll(
+  require.context("../assets/projects/tea", false, /\.(png|jpe?g|svg)$/)
+);
+
+const portfolio = importAll(
+  require.context("../assets/projects/portfolio", false, /\.(png|jpe?g|svg)$/)
+);
+
 export {
   spendAway,
   gerg,
@@ -68,4 +120,15 @@ export {
   chess3d,
   dyslexia,
   parkaway,
+  comfy,
+  redux,
+  airtable,
+  mdx,
+  gatsbyStrapi,
+  strapiBackEnd,
+  comfyJS,
+  gallery,
+  portfolio,
+  tea,
+  backroad,
 };
