@@ -27,6 +27,7 @@ const TitleWrapper = styled.div`
     font-size: 2.5rem;
     font-weight: 500;
     text-transform: capitalize;
+    white-space: nowrap;
   }
 
   .underline {
