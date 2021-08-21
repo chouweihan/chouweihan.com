@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Projects = ({ projects, page }) => {
   return (
     <Wrapper className="section">
-      <Title color="true">Projects</Title>
+      <Title color="true">{!page && "Featured"} Projects</Title>
       <div className="projects-center">
         <div className="projects-container">
           {projects.map((project) => {
