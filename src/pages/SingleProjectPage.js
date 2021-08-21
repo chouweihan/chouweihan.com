@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useProjectContext } from "../context-reducers/project-context";
 import { Link } from "react-router-dom";
 import error404 from "../assets/404.png";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 const SingleProjectPage = () => {
   const { getSingleProject, error, singleProject, loading, setLoading } =
     useProjectContext();
@@ -51,13 +53,72 @@ const SingleProjectPage = () => {
   return (
     <PageWrapper>
       <div className="nav-bar" />
+      <div className="center">
+        <div className="carousel-wrapper">
+          <Carousel swipeable={true} showStatus={false}>
+            {images.map((image, index) => {
+              return (
+                <div key={index}>
+                  <img src={image} alt={index} />
+                </div>
+              );
+            })}
+          </Carousel>
+        </div>
+        <div className="project-info"></div>
+      </div>
     </PageWrapper>
   );
 };
 
 const PageWrapper = styled.div`
-  /* background-color: var(--color-background); */
-  height: calc(100vh - 7.5rem);
+  .center {
+    display: grid;
+    min-height: calc(100vh - 3.7rem - 7.5rem);
+    max-width: var(--max-width);
+    padding: 4rem 0;
+    margin: 0 auto;
+    gap: 2rem;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .carousel-wrapper {
+    margin: 0 auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-width: 80vw;
+  }
+
+  .carousel .slide {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-logo-dark);
+    height: 300px;
+  }
+
+  .carousel .slide img {
+    object-fit: contain;
+    max-height: 300px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .carousel .slide {
+      height: 500px;
+    }
+    .carousel .slide img {
+      max-height: 500px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .carousel-wrapper {
+      width: auto;
+    }
+    .center {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   .loading-container {
     display: grid;

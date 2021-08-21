@@ -13,7 +13,7 @@ const Navbar = () => {
   const { openSidebar, sidebar } = useGeneralContext();
 
   const toggleNav = () => {
-    if (window.scrollY > 60) {
+    if (window.scrollY > 10) {
       setNavScroll(true);
     } else {
       setNavScroll(false);

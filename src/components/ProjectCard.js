@@ -72,7 +72,7 @@ const CardWrapper = styled.div`
   }
 
   .card-info {
-    padding: 1.1rem 1.1rem;
+    padding: 1.1rem 1.2rem;
   }
 
   .img-wrapper {
