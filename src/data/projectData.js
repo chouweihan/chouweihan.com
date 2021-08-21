@@ -50,7 +50,7 @@ export const projects = [
     id: 2,
     name: "HomeSafe",
     excerpt:
-      "Homesafe is a web application to help students find affordable and safe housing. This is a group project where we worked with a real client.",
+      "Homesafe is a web application to help students find affordable and safe housing. This is a group project where we worked with client.",
     description: [
       "Homesafe is a web application to help students find affordable and safe housing. I worked in a group of 5 with a real client",
       "We conducted weekly meetings with the client, documented all the work, and created manuals.",
@@ -77,11 +77,11 @@ export const projects = [
     id: 3,
     name: "Gerg's Beans",
     excerpt:
-      "A web application that provides a management and timesheet system to manage employees, projects and work packages. I worked on this app in a group with 12 others.",
+      "A web application that provides a management and timesheet system to manage employees, projects and work packages. I worked on this app in a group with 11 others.",
     description: [
-      "This project is an authentication, management and timesheet system for employees. Employees would be assigned managers, and managers can assign projects to the employees. The projects would have work packages. There are also other features such as an filter and sorting system.",
-      "This was done in a group of 12 as a part of a school course. The project spanned multiple weeks, and we emulated a real work enviroment with the professor acting as the client. We conducted weekly meetings and presentations with the client, gathering requirements and defining roles for each team member.",
-      "My role in the project initially was to gather requirements with the client, I did this alongside the project lead. Later on, I contributed to building the backend, which was done in .NET Core. As part of the backend team, we communicated closely with the frontend team.",
+      "This project is an authentication, management and timesheet system for employees. Employees would be assigned managers, and managers can assign projects to the employees. The projects would have work packages. There are also other features such as a filter and sorting system.",
+      "This was done in a group of 11 as a part of a school course. The project spanned multiple weeks, and we emulated a real work enviroment with the professor, who acted as the client. We conducted weekly meetings and presentations, gathering requirements and defining roles for each team member.",
+      "My role in the project initially was to gather requirements from the client, I did this alongside the project lead. Later on, I contributed to building the backend, which was done in .NET Core. As part of the backend team, we communicated closely with the frontend team.",
     ],
     categories: [".NET Core", "MSSQL", "Azure", "Swagger", "Angular"],
     type: "group",

@@ -111,6 +111,10 @@ const chouweihan = importAll(
   require.context("../assets/projects/chouweihan", false, /\.(png|jpe?g|svg)$/)
 );
 
+const aboutImages = importAll(
+  require.context("../assets/about", false, /\.(png|jpe?g|svg)$/)
+);
+
 export {
   spendAway,
   gerg,
@@ -136,4 +140,5 @@ export {
   tea,
   backroad,
   chouweihan,
+  aboutImages,
 };

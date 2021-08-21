@@ -40,9 +40,12 @@
   --color-logo-dark-2: #0f1a29;
   --color-logo-dark-3: #091322;
   --color-background: #fdfdfd;
+  --color-background-2: #e0eff3;
   --color-gold: rgb(230, 215, 132);
   --color-gold-half: rgba(230, 215, 132, 0.7);
   --color-gold-dark: rgb(124, 116, 70);
+
+  --color-about-bg: rgb(216, 180, 139);
 
   --custom-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   --custom-shadow-white: 0 -1px 10px rgba(0, 0, 0, 0.2);

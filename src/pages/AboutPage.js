@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import background from "../assets/hero.jpg";
-import selfie from "../assets/about/selfie.jpg";
+import selfie from "../assets/selfie.jpg";
 import { Title } from "../components";
+import Interests from "../components/Interests";
 const AboutPage = () => {
   return (
     <PageWrapper>
@@ -40,6 +41,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+      <Interests />
     </PageWrapper>
   );
 };

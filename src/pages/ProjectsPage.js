@@ -5,7 +5,7 @@ import { useProjectContext } from "../context-reducers/project-context";
 import background from "../assets/projects-bg.jpg";
 const ProjectsPage = () => {
   const { projects } = useProjectContext();
-  console.log(projects);
+
   return (
     <PageWrapper>
       <div className="background-wrapper"></div>

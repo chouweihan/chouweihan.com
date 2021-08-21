@@ -147,6 +147,9 @@ const PageWrapper = styled.div`
       white-space: nowrap;
     }
   }
+  .thumbs li {
+    border: 1px solid var(--color-logo-dark);
+  }
 
   .project-info {
     font-family: var(--font-roboto);
