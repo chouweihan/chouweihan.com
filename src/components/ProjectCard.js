@@ -10,6 +10,7 @@ const ProjectCard = ({ project }) => {
           view details
         </Link>
       </div>
+      <p className="hover">Hover/Click to see details</p>
       <div className="img-wrapper">
         <img src={images[0]} alt="location" className="main-img" />
         <div className="card-info">
@@ -92,6 +93,18 @@ const CardWrapper = styled.div`
     p {
       font-size: 1.1rem;
     }
+  }
+
+  .hover {
+    color: var(--color-logo-dark);
+    position: absolute;
+    opacity: 0.9;
+    bottom: 0;
+    right: 0;
+    padding-right: 1rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .screen {

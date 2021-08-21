@@ -34,7 +34,7 @@ const FooterWrapper = styled.footer`
   display: grid;
   place-items: center;
   row-gap: 0;
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
 
   span {
     color: var(--color-gold);

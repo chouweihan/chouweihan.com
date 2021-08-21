@@ -153,7 +153,6 @@ const PageWrapper = styled.div`
     .info-heading {
       display: flex;
       justify-content: space-between;
-      padding-right: 2rem;
       vertical-align: center;
     }
     h1 {

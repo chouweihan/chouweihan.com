@@ -179,7 +179,7 @@ const HeroWrapper = styled.div`
         height: 450px;
         object-fit: cover;
         border-radius: 15px;
-        border: 3px solid var(--color-gold);
+        border: none;
       }
     }
 
