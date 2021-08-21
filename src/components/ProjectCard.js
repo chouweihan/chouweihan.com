@@ -123,6 +123,7 @@ const CardWrapper = styled.div`
     border: 2px solid var(--color-background);
     padding: 0.7rem 0.9rem;
     border-radius: 5px;
+    display: none;
     :hover {
       box-shadow: inset 0 100px 0 0 var(--color-background);
       color: var(--color-logo-dark);
@@ -131,6 +132,9 @@ const CardWrapper = styled.div`
 
   :hover .screen {
     opacity: 1;
+    .details-button {
+      display: block;
+    }
   }
 `;
 

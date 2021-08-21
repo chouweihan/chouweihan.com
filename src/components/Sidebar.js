@@ -67,9 +67,6 @@ const Sidebar = () => {
 };
 
 const SidebarWrapper = styled.aside`
-  .links-container {
-  }
-
   .close-btn {
     font-size: 2.1rem;
     color: var(--color-gold);
@@ -120,8 +117,8 @@ const SidebarWrapper = styled.aside`
     font-size: 1.5rem;
     opacity: 0.9;
     display: flex;
-    padding-right: 2.1rem;
     align-items: center;
+    padding-right: 2.1rem;
   }
 
   .link {

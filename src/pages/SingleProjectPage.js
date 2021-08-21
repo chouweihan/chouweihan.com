@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import error404 from "../assets/404.png";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
+
 const SingleProjectPage = () => {
   const { getSingleProject, error, singleProject, loading, setLoading } =
     useProjectContext();
@@ -47,39 +49,198 @@ const SingleProjectPage = () => {
     );
   }
 
-  const { name, description, categories, type, images, year, links } =
-    singleProject;
+  const {
+    name,
+    description,
+    categories,
+    type,
+    images,
+    year,
+    links: { githubLink, hostedLink },
+  } = singleProject;
 
   return (
     <PageWrapper>
       <div className="nav-bar" />
       <div className="center">
-        <div className="carousel-wrapper">
-          <Carousel swipeable={true} showStatus={false}>
-            {images.map((image, index) => {
-              return (
-                <div key={index}>
-                  <img src={image} alt={index} />
-                </div>
-              );
-            })}
-          </Carousel>
+        <h1 className="link-h1">
+          <Link to="/projects">Projects</Link>
+          <span> / {name}</span>
+        </h1>
+        <div className="content-wrap">
+          <div className="carousel-wrapper">
+            <Carousel swipeable={true} showStatus={false}>
+              {images.map((image, index) => {
+                return (
+                  <div key={index}>
+                    <img src={image} alt={index} />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+          <div className="project-info">
+            <div className="info-heading">
+              <h1>{name}</h1>
+              <h3>{year}</h3>
+            </div>
+            <h2>{type} Project</h2>
+            <hr />
+            <div className="categories">
+              {categories.map((category, index) => {
+                return <p key={index}>{category}</p>;
+              })}
+            </div>
+            <hr />
+            <div className="info-paragraphs">
+              {description.map((desc, index) => {
+                return (
+                  <p key={index} className="paragraph">
+                    {desc}
+                  </p>
+                );
+              })}
+              <hr />
+              <div className="link-container">
+                {githubLink && (
+                  <a href={githubLink} target="_blank" rel="noreferrer">
+                    <p className="link">
+                      <span>
+                        <AiOutlineGithub />
+                      </span>
+                      GitHub
+                    </p>
+                  </a>
+                )}
+                {hostedLink && (
+                  <a href={hostedLink} target="_blank" rel="noreferrer">
+                    <p className="link">
+                      <span>
+                        <AiOutlineLink />
+                      </span>
+                      Hosted Link
+                    </p>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="project-info"></div>
       </div>
     </PageWrapper>
   );
 };
 
 const PageWrapper = styled.div`
+  .categories {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    p {
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      color: var(--color-background);
+      background-color: var(--color-p-4);
+      padding: 0.3rem 0.5rem;
+      border-radius: 10px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
+  .project-info {
+    font-family: var(--font-roboto);
+    .info-heading {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 2rem;
+      vertical-align: center;
+    }
+    h1 {
+      color: var(--color-p-2);
+      font-weight: 400;
+    }
+    h2 {
+      color: var(--color-p-3);
+      font-weight: 400;
+    }
+    h3 {
+      font-weight: 300;
+      align-self: center;
+    }
+  }
+
+  .info-paragraphs {
+    margin-top: 1rem;
+    .paragraph {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .info-paragraphs {
+      .paragraph {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .link-container {
+    margin-top: 1rem;
+    display: flex;
+  }
+
+  .link {
+    margin-right: 3rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-p-4);
+    transition: var(--transition);
+    span {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+    }
+    :hover {
+      color: var(--color-darker);
+    }
+  }
+
+  .link-h1 {
+    font-size: 1.5rem;
+    font-family: var(--font-roboto);
+    font-weight: 400;
+    color: var(--color-darker-2);
+    a:link {
+      transition: var(--transition);
+      color: var(--color-darker-2);
+    }
+    a:visited {
+      color: var(--color-darker-2);
+    }
+    a:hover {
+      color: var(--color-gold);
+    }
+    span {
+      color: var(--color-logo-dark);
+    }
+  }
+
   .center {
     display: grid;
     min-height: calc(100vh - 3.7rem - 7.5rem);
     max-width: var(--max-width);
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     margin: 0 auto;
-    gap: 2rem;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .content-wrap {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto 1fr;
   }
 
   .carousel-wrapper {
@@ -111,12 +272,18 @@ const PageWrapper = styled.div`
   }
 
   @media screen and (min-width: 992px) {
+    .carousel {
+      width: 440px;
+    }
+
     .carousel-wrapper {
       width: auto;
+      padding-top: 0.7rem;
     }
-    .center {
+    .content-wrap {
       grid-template-rows: auto;
       grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
   }
 
