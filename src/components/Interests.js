@@ -41,13 +41,14 @@ const InterestWrapper = styled.div`
   .interest-container {
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 5rem;
   }
 
   @media screen and (min-width: 992px) {
     .interests-container {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
   }
 `;
