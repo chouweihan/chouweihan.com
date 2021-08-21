@@ -50,7 +50,7 @@ export const projects = [
     id: 2,
     name: "HomeSafe",
     excerpt:
-      "Homesafe is a web application to help students find affordable and safe housing. This is a group project where we worked with a real client",
+      "Homesafe is a web application to help students find affordable and safe housing. This is a group project where we worked with a real client.",
     description: [
       "Homesafe is a web application to help students find affordable and safe housing. I worked in a group of 5 with a real client",
       "We conducted weekly meetings with the client, documented all the work, and created manuals.",
@@ -97,7 +97,7 @@ export const projects = [
     id: 4,
     name: "Github Users",
     excerpt:
-      "A frontend React app that features third party APIs and libraries. The app can search up github users and display information in charts",
+      "A frontend React app that features third party APIs and libraries. The app can search up github users and display information in charts.",
     description: [
       "This app uses github's API to grab information about github users. Users can search up github account names, and find information about them. The data is displayed using FusionCharts.",
       "The app also features a simple implementation of Auth0's authentication system as a learning experiment.",
@@ -116,7 +116,8 @@ export const projects = [
   {
     id: 5,
     name: "Chou Weihan",
-    excerpt: "This project is the website you're currently on! Enjoy your stay",
+    excerpt:
+      "This project is the website you're currently on! Enjoy your stay.",
     description: [
       "This is my very own website, I'm using it as my portfolio and for my own self interests!",
       "This website uses React for frontend. All components and data shown are static. The styling on the website is a mixture of CSS and Styled Components.",
@@ -136,7 +137,7 @@ export const projects = [
     id: 6,
     name: "Node Mailer",
     excerpt:
-      "A simple node express backend app using Nodemailer to send emails from my website",
+      "A simple node express backend app using Nodemailer to send emails from my website.",
     description: [
       "This is a backend written in express. It uses Nodemailer to send emails. There are basic validations implemented. The Nodemailer uses gmail OAUTH to send mails.",
       "Feel free to try it out in my Contact section!",
@@ -155,7 +156,7 @@ export const projects = [
     id: 7,
     name: "Jobs-Authentication",
     excerpt:
-      "An Express backend app, that has an authentication system and a basic CRUD api",
+      "An Express backend app, that has an authentication system and a basic CRUD api.",
     description: [
       "This express app allows user to create accounts and login. The password is hashed with Bcrypt, Users can then login with the created account, recieve a JWToken and used the CRUD functions of the app.",
       "This app contains custom error handling, routes and controllers. It uses MongoDB for database storage.",
@@ -203,7 +204,7 @@ export const projects = [
     id: 9,
     name: "Canvas Shapes",
     excerpt:
-      "This is an app where users can draw shapes and modify them on a canvas. It is made with Java and JavaFX",
+      "This is an app where users can draw shapes and modify them on a canvas. It is made with Java and JavaFX.",
     description: [
       "This is an app where users can draw shapes and modify them on a canvas. It is made with Java and JavaFX",
       "Users can choose between 4 different shapes, and a variety of different colors. Users can also select them and rearrange them. The most recent shape will be on top.",
@@ -224,7 +225,7 @@ export const projects = [
     id: 10,
     name: "Chess3D",
     excerpt:
-      "This is a continuation of my chess project. Pieces can now move vertically up and down three boards. Built in Java and JavaFX",
+      "This is a continuation of my chess project. Pieces can now move vertically up and down three boards. Built in Java and JavaFX.",
     description: [
       "This is a continuation of my chess project. Pieces can now move vertically up and down three boards. Built in Java and JavaFX. Pieces still follow chess rules when moving up and down the board.",
     ],
@@ -242,7 +243,7 @@ export const projects = [
     id: 11,
     name: "Chess",
     excerpt:
-      "This is a chess game made to practice object orientated programming. It is built with Java and JavaFX",
+      "This is a chess game made to practice object orientated programming. It is built with Java and JavaFX.",
     description: [
       "This is a chess game I made to practice object orientated programming. It is built with Java and JavaFX. Notable feature includes saving of the game state with Serializable class.",
     ],
@@ -299,7 +300,7 @@ export const projects = [
     id: 14,
     name: "Comfy Store",
     excerpt:
-      "A React web app that reads from a products api and displays it. It uses Auth0 authentication system and stripe as a merchant",
+      "A React web app that reads from a products api and displays it. It uses Auth0 authentication system and stripe as a merchant.",
     description: [
       "Comfy store is a web app built to be like an actual online vendor. It has cart functions, localstorage, authentication and stripe purchases.",
       "The products can also be filtered and sorted. Cart items are stored in localstorage.",
@@ -320,7 +321,7 @@ export const projects = [
   {
     id: 15,
     name: "React Redux Cart",
-    excerpt: "A very simple application made to test React's redux",
+    excerpt: "A very simple application made to test React's redux.",
     description: ["A very simple application made to test React's redux"],
     categories: ["React"],
     type: "personal",
@@ -337,7 +338,7 @@ export const projects = [
     id: 16,
     name: "Airtable",
     excerpt:
-      "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
+      "A Gatsby project that connects to Airtable and grabs information and images from Airtable.",
     description: [
       "A Gatsby project that connects to Airtable and grabs information and images from Airtable",
       "This web app mainly created to test out airtable, including writing to the Airtable.",
@@ -357,7 +358,7 @@ export const projects = [
   {
     id: 17,
     name: "Gatsby MDX blog",
-    excerpt: "A Gatsby web application that displays different MDX files",
+    excerpt: "A Gatsby web application that displays different MDX files.",
     description: [
       "This is a gatsby application that takes MDX files and displays them in a visually appealing manner",
       "The images are rendered using gatsby remark images",
@@ -376,10 +377,11 @@ export const projects = [
   },
   {
     id: 18,
-    name: "This is part of 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
-    excerpt: "",
+    name: "Gatsby Strapi",
+    excerpt:
+      "This is part 1 of a 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
     description: [
-      "This is part of 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
+      "This is part 1 of a 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
     ],
     categories: ["Gatsby", "Strapi"],
     type: "personal",
@@ -395,7 +397,7 @@ export const projects = [
   {
     id: 19,
     name: "Strapi Back End",
-    excerpt: "This is the back end to my Gatsby Strapi project",
+    excerpt: "This is the back end to my Gatsby Strapi project.",
     description: [
       "This is the back end to my Gatsby Strapi project, it has a few simple collections used to store images and information.",
     ],
@@ -491,7 +493,7 @@ export const projects = [
     id: 24,
     name: "Tea Station",
     excerpt:
-      "This is a pure HTML and CSS project to practice styling and floats",
+      "This is a pure HTML and CSS project to practice styling and floats.",
     description: [
       "This is a pure HTML and CSS project to practice styling and floats",
       "Check it the hosted project!",

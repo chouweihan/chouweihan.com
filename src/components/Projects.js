@@ -1,28 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "./";
-import { useProjectContext } from "../context-reducers/project-context";
 import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
-const Projects = () => {
-  const { featuredProjects } = useProjectContext();
-
+const Projects = ({ projects, page }) => {
   return (
     <Wrapper className="section">
       <Title color="true">Projects</Title>
       <div className="projects-center">
         <div className="projects-container">
-          {featuredProjects.map((project) => {
+          {projects.map((project) => {
             return (
               <ProjectCard key={project.id} project={project}></ProjectCard>
             );
           })}
         </div>
-        <div className="button-container">
-          <Link to="/projects" className="button">
-            SEE ALL PROJECTS
-          </Link>
-        </div>
+        {!page && (
+          <div className="button-container">
+            <Link to="/projects" className="button">
+              SEE ALL PROJECTS
+            </Link>
+          </div>
+        )}
       </div>
     </Wrapper>
   );
@@ -47,6 +46,12 @@ const Wrapper = styled.section`
     gap: 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  @media screen and (min-width: 992px) {
+    .projects-container {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
   }
 
   .button-container {

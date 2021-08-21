@@ -37,8 +37,8 @@ const CardWrapper = styled.div`
   border-radius: 15px;
   transition: var(--transition);
   font-family: var(--font-roboto);
-  /* overflow-y: hidden; */
-  border: 2px solid var(--color-gold);
+  /* border: 2px solid var(--color-gold); */
+  box-shadow: var(--custom-shadow-white);
   position: relative;
 
   .info-header {
@@ -106,6 +106,7 @@ const CardWrapper = styled.div`
     place-items: center;
     transition: 0.3s linear;
     opacity: 0;
+    border-radius: 15px;
   }
 
   .details-button {
