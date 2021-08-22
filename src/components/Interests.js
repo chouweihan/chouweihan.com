@@ -22,13 +22,15 @@ const Interests = () => {
 };
 
 const InterestWrapper = styled.div`
-  padding: 2.5rem 0;
+  min-height: 100vh;
+  padding: 2rem 0;
   padding-bottom: 0;
   background-color: var(--color-background);
 
   .second-wrapper {
     width: 100vw;
-    margin: 4rem 0;
+    margin: 3rem 0;
+    margin-bottom: 0;
     background: var(--color-background-2);
   }
 
