@@ -23,6 +23,7 @@ const Interests = () => {
 
 const InterestWrapper = styled.div`
   padding: 2.5rem 0;
+  padding-bottom: 0;
   background-color: var(--color-background);
 
   .second-wrapper {

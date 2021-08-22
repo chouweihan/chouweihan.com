@@ -128,11 +128,12 @@ const PageWrapper = styled.div`
   }
 
   .paragraph {
-    margin-top: 3rem;
+    margin-top: 1.7rem;
   }
 
   .center {
     min-height: calc(100vh - 3.7rem - 7.5rem);
+    padding-bottom: 3rem;
   }
 
   .background-wrapper {
