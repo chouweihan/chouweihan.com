@@ -22,7 +22,6 @@ const Interests = () => {
 };
 
 const InterestWrapper = styled.div`
-  min-height: 100vh;
   padding: 2rem 0;
   padding-bottom: 0;
   background-color: var(--color-background);
