@@ -322,6 +322,9 @@ const Wrapper = styled.section`
       grid-template-columns: auto 1fr;
       gap: 2rem;
       place-items: center;
+      p {
+        white-space: nowrap;
+      }
     }
 
     .contact-data {
