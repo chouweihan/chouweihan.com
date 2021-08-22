@@ -274,10 +274,6 @@ const PageWrapper = styled.div`
   }
 
   @media screen and (min-width: 992px) {
-    .carousel {
-      width: 440px;
-    }
-
     .carousel-wrapper {
       width: auto;
       padding-top: 0.7rem;
