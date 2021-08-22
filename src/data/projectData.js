@@ -287,7 +287,7 @@ export const projects = [
       "Notable features of this app includes images to word processing and export text to pdf. It also has a text-to-speech function. The pdf, image processing and text-to-speech are all third party APIs",
     ],
     categories: ["HTML", "CSS", "Javascript"],
-    type: "personal",
+    type: "group",
     images: dyslexia,
     featured: false,
     year: 2018,
