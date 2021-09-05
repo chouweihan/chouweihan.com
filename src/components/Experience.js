@@ -31,16 +31,16 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 992px) {
     .center {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
   }
 
-  @media screen and (min-width: 1300px) {
+  /* @media screen and (min-width: 1300px) {
     .center {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
     }
-  }
+  } */
 `;
 
 export default Experience;

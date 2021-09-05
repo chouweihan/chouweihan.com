@@ -2,10 +2,25 @@ import bcit1 from "../assets/experience/bcit1.jpg";
 import bcit2 from "../assets/experience/bcit2.png";
 import wow1 from "../assets/experience/wow1.jpg";
 import wow2 from "../assets/experience/wow2.png";
+import synic01 from "../assets/experience/synic01.jpg";
+import synic02 from "../assets/experience/synic02.png";
 
 export const expData = [
   {
     id: 1,
+    name: "Synic Software Inc.",
+    title: "Full Stack Developer",
+    excerpt:
+      "I am currently working at Synic Software as a full stack developer",
+    description: [
+      "I am currently building a website from scratch for the marketing team",
+    ],
+    images: [synic01, synic02],
+    type: "work",
+    year: "2021-present",
+  },
+  {
+    id: 2,
     name: "BCIT",
     title: "Computer Systems Technology (CST)",
     excerpt:
@@ -19,7 +34,7 @@ export const expData = [
     year: "2018-2020",
   },
   {
-    id: 2,
+    id: 3,
     name: "Wow! Mobile Boutique",
     title: "Sales Associate",
     excerpt:

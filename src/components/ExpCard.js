@@ -125,7 +125,7 @@ const CardWrapper = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media screen and (min-width: 1300px) {
+  /* @media screen and (min-width: 1300px) {
     grid-template-columns: auto 1fr;
     max-width: 80vw;
 
@@ -173,7 +173,7 @@ const CardWrapper = styled.div`
     p {
       font-size: 1.05rem;
     }
-  }
+  } */
 `;
 
 export default ExpCard;
