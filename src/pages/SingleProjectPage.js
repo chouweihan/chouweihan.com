@@ -39,7 +39,7 @@ const SingleProjectPage = () => {
           <div className="error-info">
             <h1>Project Not Found</h1>
             <div className="button-container">
-              <Link className="button" to="/projects">
+              <Link className="button" to="/old/projects">
                 Back to Projects
               </Link>
             </div>
@@ -64,7 +64,7 @@ const SingleProjectPage = () => {
       <div className="nav-bar" />
       <div className="center">
         <h1 className="link-h1">
-          <Link to="/projects">Projects</Link>
+          <Link to="/old/projects">Projects</Link>
           <span> / {name}</span>
         </h1>
         <div className="content-wrap">

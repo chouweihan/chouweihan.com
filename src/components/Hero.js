@@ -23,7 +23,7 @@ const Hero = () => {
             Hi, Welcome to my site! Here you will find information about me and
             my projects!
           </p>
-          <Link to="/about" className="button">
+          <Link to="/old/about" className="button">
             About Me
           </Link>
           <SocialLinks hero />

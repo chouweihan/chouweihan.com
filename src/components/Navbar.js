@@ -22,12 +22,16 @@ const Navbar = () => {
 
   window.addEventListener("scroll", toggleNav);
 
+  if(window.location.pathname === "/") {
+    return null;
+  }
+
   return (
     <Nav navScroll={navScroll}>
       <div className={`wrapper ${navScroll ? "active" : ""}`}>
         <div className="nav-center">
           <div className="nav-header">
-            <Link to="/">
+            <Link to="/old">
               <img src={navScroll ? logo_dark : logo_light} alt="Home" />
             </Link>
           </div>
@@ -40,7 +44,7 @@ const Navbar = () => {
             {links.map((link) => {
               return (
                 <li key={link.id} className="link">
-                  <Link to={link.url}>{link.text}</Link>
+                  <Link to={`/old${link.url}`}>{link.text}</Link>
                 </li>
               );
             })}

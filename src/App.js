@@ -7,8 +7,10 @@ import {
   ProjectsPage,
   SingleProjectPage,
   AboutPage,
+  ComingSoon
 } from "./pages";
 import ScrollToTop from "./utility/ScrollToTop";
+
 
 function App() {
   return (
@@ -18,16 +20,19 @@ function App() {
       <Sidebar />
       <Switch>
         <Route exact path="/">
+          <ComingSoon />
+        </Route>
+        <Route exact path="/old">
           <HomePage />
         </Route>
-        <Route exact path="/about">
+        <Route exact path="/old/about">
           <AboutPage />
         </Route>
-        <Route exact path="/projects">
+        <Route exact path="/old/projects">
           <ProjectsPage />
         </Route>
-        <Route exact path="/projects/:id" children={<SingleProjectPage />} />
-        <Route exact path="/contact">
+        <Route exact path="/old/projects/:id" children={<SingleProjectPage />} />
+        <Route exact path="/old/contact">
           <ContactPage />
         </Route>
         <Route path="*">

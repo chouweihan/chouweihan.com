@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Projects from "../components/Projects";
 import { useProjectContext } from "../context-reducers/project-context";
 import background from "../assets/projects-bg.jpg";
+
 const ProjectsPage = () => {
   const { projects } = useProjectContext();
 

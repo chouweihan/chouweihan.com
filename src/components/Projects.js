@@ -17,7 +17,7 @@ const Projects = ({ projects, page }) => {
         </div>
         {!page && (
           <div className="button-container">
-            <Link to="/projects" className="button">
+            <Link to="/old/projects" className="button">
               SEE ALL PROJECTS
             </Link>
           </div>

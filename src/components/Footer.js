@@ -11,7 +11,7 @@ const Footer = () => {
         {links.map((link) => {
           return (
             <li key={link.id}>
-              <Link to={link.url} className="footer-link">
+              <Link to={`/old${link.url}`} className="footer-link">
                 {link.text}
               </Link>
             </li>

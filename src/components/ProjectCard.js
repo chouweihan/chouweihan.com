@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   return (
     <CardWrapper>
       <div className="screen">
-        <Link className="details-button" to={`/projects/${id}`}>
+        <Link className="details-button" to={`/old/projects/${id}`}>
           view details
         </Link>
       </div>

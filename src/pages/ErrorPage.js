@@ -11,7 +11,7 @@ const ErrorPage = () => {
         <img src={error404} alt="404 page not found" />
       </div>
       <div className="center">
-        <Link to="/" className="ret-button">
+        <Link to="/old/" className="ret-button">
           Return Home
         </Link>
       </div>

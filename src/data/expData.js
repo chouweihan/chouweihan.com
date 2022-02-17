@@ -11,9 +11,11 @@ export const expData = [
     name: "Synic Software Inc.",
     title: "Full Stack Developer",
     excerpt:
-      "I am currently working at Synic Software as a full stack developer",
+      "I am currently working at Synic Software as a full stack developer. Outside of the projects which I am soley responsible for, I help out whichever teams needs the extra assistance.",
     description: [
-      "I am currently building a website from scratch for the marketing team",
+      "I have built and contributed to multiple projects. During my time at Synic, I have used a variety of technology including React, Angular, Liquid Shopify, MVC, dotnet EF and more!",
+      "I am responsible for building and maintaining the marketing team's website. It was my first project at Synic, and I learned to implement SEO, Google Analytics and CRM services.",
+      "I am also responsible for building and maintaing a shopify website built from Liquid template language."
     ],
     images: [synic01, synic02],
     type: "work",

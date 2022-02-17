@@ -22,7 +22,7 @@ const Sidebar = () => {
           <ul>
             {links.map((link) => {
               return (
-                <Link to={link.url} key={link.id} onClick={closeSidebar}>
+                <Link to={`/old${link.url}`} key={link.id} onClick={closeSidebar}>
                   <li className="link">
                     <p className="link-text">
                       <span className="fa-fw">{link.icon}</span>

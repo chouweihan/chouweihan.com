@@ -420,6 +420,10 @@ const Wrapper = styled.section`
         }
       }
     `}
+
+    .contact-data p {
+      cursor: pointer;
+    }
 `;
 
 export default Contact;
