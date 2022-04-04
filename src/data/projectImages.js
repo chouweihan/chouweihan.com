@@ -115,6 +115,15 @@ const aboutImages = importAll(
   require.context("../assets/about", false, /\.(png|jpe?g|svg)$/)
 );
 
+const scmImages = importAll(
+  require.context("../assets/projects/scm", false, /\.(png|jpe?g|svg)$/)
+);
+
+
+const ethJoyImages = importAll(
+  require.context("../assets/projects/ethjoy", false, /\.(png|jpe?g|svg)$/)
+);
+
 export {
   spendAway,
   gerg,
@@ -141,4 +150,6 @@ export {
   backroad,
   chouweihan,
   aboutImages,
+  scmImages,
+  ethJoyImages
 };

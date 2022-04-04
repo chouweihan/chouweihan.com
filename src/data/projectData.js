@@ -21,13 +21,55 @@ import {
   gallery,
   tea,
   backroad,
-  portfolio,
   chouweihan,
+  scmImages,
+  ethJoyImages
 } from "./projectImages";
 
 export const projects = [
   {
     id: 1,
+    name: "Ethereum Joy",
+    excerpt:
+      "A website I created to display fun information about your Ethereum wallet",
+    description: [
+      "Connects to metamask to obtain your wallet address, then grabs your transaction data and lets you filter and sort through them.",
+      "This site implements multiple different API so you see different Ethereum prices and gas prices. This site also lets you seemlessly switch between different currencies.",
+      "Grabs NFT information from Moralis API and lets you search through it in a neatly paginated manner",
+      "Implemented dark mode for you dark mode users.",
+    ],
+    categories: ["React", "Typscript", "Javascript", "Etherscans", "Moralis", "Material UI"],
+    type: "personal",
+    images: ethJoyImages,
+    featured: true,
+    year: 2022,
+    links: {
+      githubLink: "https://github.com/chouweihan/Ethereum-Joy",
+      hostedLink: "https://ethereumjoy.netlify.app/",
+    },
+  },
+  {
+    id: 2,
+    name: "Synic Creative Marketing",
+    excerpt:
+      "A website I created as the sole developer for my the Synic Creative Marketing team",
+    description: [
+      "This was my first website I created at Synic Software, I designed, developed and deployed it.",
+      "This site implements Google Analytics to track page visits and button clicks",
+      "This is primarily made using React, and implements multiple different features. As well as an admin portal.",
+    ],
+    categories: ["React", "Styled-components", "Javascript", "Firebase", "Hubspot", ".NET Core", "Material UI"],
+    type: "work",
+    images: scmImages,
+    featured: true,
+    year: 2021,
+    links: {
+      githubLink: "",
+      hostedLink: "https://syniccreative.marketing/",
+    },
+  },
+  {
+    id: 3,
     name: "SpendAway",
     excerpt:
       "Fun little android app to help users keep track of their purchases. I made it using Android Studio, Kotlin and Java!",
@@ -39,7 +81,7 @@ export const projects = [
     categories: ["Android Studio", "Java", "Kotlin", "Firebase"],
     type: "personal",
     images: spendAway,
-    featured: true,
+    featured: false,
     year: 2019,
     links: {
       githubLink: "https://github.com/chouweihan/SpendAway",
@@ -47,7 +89,7 @@ export const projects = [
     },
   },
   {
-    id: 2,
+    id: 4,
     name: "HomeSafe",
     excerpt:
       "Homesafe is a web application to help students find affordable and safe housing. This is a group project where we worked with client.",
@@ -74,7 +116,7 @@ export const projects = [
     },
   },
   {
-    id: 3,
+    id: 5,
     name: "Gerg's Beans",
     excerpt:
       "A web application that provides a management and timesheet system to manage employees, projects and work packages. I worked on this app in a group with 11 others.",
@@ -94,7 +136,7 @@ export const projects = [
     },
   },
   {
-    id: 4,
+    id: 6,
     name: "Github Users",
     excerpt:
       "A frontend React app that features third party APIs and libraries. The app can search up github users and display information in charts.",
@@ -114,7 +156,7 @@ export const projects = [
     },
   },
   {
-    id: 5,
+    id: 7,
     name: "Chou Weihan",
     excerpt:
       "This project is the website you're currently on! Enjoy your stay.",
@@ -126,7 +168,7 @@ export const projects = [
     categories: ["React", "Styled Components", "Javascript"],
     type: "personal",
     images: chouweihan,
-    featured: true,
+    featured: false,
     year: 2021,
     links: {
       githubLink: "https://github.com/chouweihan/chouweihan.com",
@@ -134,7 +176,7 @@ export const projects = [
     },
   },
   {
-    id: 6,
+    id: 8,
     name: "Node Mailer",
     excerpt:
       "A simple node express backend app using Nodemailer to send emails from my website.",
@@ -153,7 +195,7 @@ export const projects = [
     },
   },
   {
-    id: 7,
+    id: 9,
     name: "Jobs-Authentication",
     excerpt:
       "An Express backend app, that has an authentication system and a basic CRUD api.",
@@ -180,7 +222,7 @@ export const projects = [
     },
   },
   {
-    id: 8,
+    id: 10,
     name: "BCIT OSCE",
     excerpt:
       "This is an examination app that will be used by BCIT's nursing department. We inherited this project and continued it's development.",
@@ -201,7 +243,7 @@ export const projects = [
     },
   },
   {
-    id: 9,
+    id: 11,
     name: "Canvas Shapes",
     excerpt:
       "This is an app where users can draw shapes and modify them on a canvas. It is made with Java and JavaFX.",
@@ -222,7 +264,7 @@ export const projects = [
   },
 
   {
-    id: 10,
+    id: 12,
     name: "Chess3D",
     excerpt:
       "This is a continuation of my chess project. Pieces can now move vertically up and down three boards. Built in Java and JavaFX.",
@@ -240,7 +282,7 @@ export const projects = [
     },
   },
   {
-    id: 11,
+    id: 13,
     name: "Chess",
     excerpt:
       "This is a chess game made to practice object orientated programming. It is built with Java and JavaFX.",
@@ -258,7 +300,7 @@ export const projects = [
     },
   },
   {
-    id: 12,
+    id: 14,
     name: "ParkAway",
     excerpt:
       "ParkAway is a web application that lets users indicate parking spot availability at BCIT. This project was made in a group of 5.",
@@ -278,7 +320,7 @@ export const projects = [
     },
   },
   {
-    id: 13,
+    id: 15,
     name: "Dsylexia Font Converter",
     excerpt:
       "This is a project I made at a hackathon to help people with dyslexia read better, by changing fonts and documents into dyslexic friendly fonts.",
@@ -297,7 +339,7 @@ export const projects = [
     },
   },
   {
-    id: 14,
+    id: 16,
     name: "Comfy Store",
     excerpt:
       "A React web app that reads from a products api and displays it. It uses Auth0 authentication system and stripe as a merchant.",
@@ -319,7 +361,7 @@ export const projects = [
     },
   },
   {
-    id: 15,
+    id: 17,
     name: "React Redux Cart",
     excerpt: "A very simple application made to test React's redux.",
     description: ["A very simple application made to test React's redux"],
@@ -335,7 +377,7 @@ export const projects = [
     },
   },
   {
-    id: 16,
+    id: 18,
     name: "Airtable",
     excerpt:
       "A Gatsby project that connects to Airtable and grabs information and images from Airtable.",
@@ -356,7 +398,7 @@ export const projects = [
     },
   },
   {
-    id: 17,
+    id: 19,
     name: "Gatsby MDX blog",
     excerpt: "A Gatsby web application that displays different MDX files.",
     description: [
@@ -376,7 +418,7 @@ export const projects = [
     },
   },
   {
-    id: 18,
+    id: 20,
     name: "Gatsby Strapi",
     excerpt:
       "This is part 1 of a 2 part project for gatsby and strapi. This is the frontend used to display information grabbed from a strapi backend.",
@@ -395,7 +437,7 @@ export const projects = [
     },
   },
   {
-    id: 19,
+    id: 21,
     name: "Strapi Back End",
     excerpt: "This is the back end to my Gatsby Strapi project.",
     description: [
@@ -412,7 +454,7 @@ export const projects = [
     },
   },
   {
-    id: 20,
+    id: 22,
     name: "Comfy Store (JS)",
     excerpt:
       "This is the Javascript version of my comfy project. It grabs products api and displays it like an actual store vendor site.",
@@ -432,7 +474,7 @@ export const projects = [
     },
   },
   {
-    id: 21,
+    id: 23,
     name: "Javascript Gallery",
     excerpt:
       "This is a javascript project to dispaly a gallery of images. It includes a Modal when clicking on images.",
@@ -451,7 +493,7 @@ export const projects = [
     },
   },
   {
-    id: 22,
+    id: 24,
     name: "Backroad",
     excerpt: "This is a pure HTML and CSS project used to practice flexbox!",
     description: [
@@ -490,7 +532,7 @@ export const projects = [
   //   },
   // },
   {
-    id: 24,
+    id: 25,
     name: "Tea Station",
     excerpt:
       "This is a pure HTML and CSS project to practice styling and floats.",
