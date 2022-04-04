@@ -469,26 +469,26 @@ export const projects = [
       hostedLink: "https://project-htmlcss-backroad.netlify.app",
     },
   },
-  {
-    id: 23,
-    name: "Portfolio",
-    excerpt:
-      "This is pure a HTML and CSS project used to practice display Grid!",
-    description: [
-      "This is pure a HTML and CSS project used to practice display Grid!",
-      "Check it the hosted project!",
-    ],
-    categories: ["HTML", "CSS"],
-    type: "personal",
-    images: portfolio,
-    featured: false,
-    year: 2021,
-    links: {
-      githubLink:
-        "https://github.com/chouweihan/LearningProjects/tree/main/HTML_CSS/Portfolio",
-      hostedLink: "https://project-htmlcss-portfolio.netlify.app/",
-    },
-  },
+  // {
+  //   id: 23,
+  //   name: "Portfolio",
+  //   excerpt:
+  //     "This is pure a HTML and CSS project used to practice display Grid!",
+  //   description: [
+  //     "This is pure a HTML and CSS project used to practice display Grid!",
+  //     "Check it the hosted project!",
+  //   ],
+  //   categories: ["HTML", "CSS"],
+  //   type: "personal",
+  //   images: portfolio,
+  //   featured: false,
+  //   year: 2021,
+  //   links: {
+  //     githubLink:
+  //       "https://github.com/chouweihan/LearningProjects/tree/main/HTML_CSS/Portfolio",
+  //     hostedLink: "https://project-htmlcss-portfolio.netlify.app/",
+  //   },
+  // },
   {
     id: 24,
     name: "Tea Station",
